@@ -1,4 +1,3 @@
-<!-- Галерея простору клубу з робочими фото-заглушками Unsplash -->
 <!DOCTYPE html>
 <html lang="uk" class="scroll-smooth">
 <head>
@@ -7,19 +6,64 @@
     <title>Простір | ORGANIZM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { colors: { brand: { red: '#E31818', dark: '#050505', gray: '#121212', muted: '#8A8A8A' } }, fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Oswald', 'sans-serif'] }, letterSpacing: { 'widest-xl': '0.2em' } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#E31818',
+                            dark: '#050505',
+                            gray: '#121212',
+                            card: '#161616',
+                            muted: '#8A8A8A',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'widest-xl': '0.2em',
+                    }
+                }
+            }
+        }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { background-color: #050505; color: #FFFFFF; background-image: radial-gradient(circle at 50% 0%, rgba(227, 24, 24, 0.08) 0%, transparent 60%), url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"); background-size: 100% 100%, 150px 150px; background-attachment: fixed; }
-        .glass-nav { background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        body {
+            background-color: #050505;
+            color: #FFFFFF;
+            background-image:
+                    radial-gradient(circle at 50% 0%, rgba(227, 24, 24, 0.08) 0%, transparent 60%),
+                    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+            background-size: 100% 100%, 150px 150px;
+            background-attachment: fixed;
+        }
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; }
+        ::-webkit-scrollbar-thumb:hover { background: #E31818; }
     </style>
 </head>
 <body class="antialiased font-sans font-medium flex flex-col min-h-screen">
 
+<!-- Навігація -->
 <header class="fixed w-full top-0 z-50 transition-all duration-500 glass-nav" id="navbar">
     <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
         <div class="flex items-center justify-between h-20 md:h-24">
@@ -38,13 +82,15 @@
                 <a href="tel:+380959171212" class="text-xs font-bold tracking-widest hover:text-brand-red transition-colors">095 917 1212</a>
                 <a href="tel:+380679172112" class="text-xs font-bold tracking-widest text-brand-muted hover:text-brand-red transition-colors">067 917 2112</a>
             </div>
-            <button id="menu-toggle" class="lg:hidden text-white p-2 z-50 relative">
-                <i data-lucide="menu" class="w-6 h-6 menu-icon"></i><i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+            <button id="menu-toggle" class="lg:hidden text-white p-2 z-50 relative" aria-label="Відкрити меню">
+                <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
+                <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
             </button>
         </div>
     </div>
 </header>
 
+<!-- Мобільне меню -->
 <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-40 hidden opacity-0 transition-opacity duration-300 flex-col items-center justify-center">
     <nav class="flex flex-col gap-8 text-center text-2xl font-display font-bold uppercase tracking-widest mb-12">
         <a href="index.html" class="hover:text-brand-red transition-colors">Головна</a>
@@ -57,51 +103,210 @@
     </div>
 </div>
 
-<main class="flex-grow pt-32 pb-20">
+<main class="flex-grow pt-28 md:pt-36 pb-20">
     <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
-        <div class="mb-12 reveal">
-            <span class="text-brand-red text-[10px] font-bold tracking-widest-xl uppercase mb-4 block">Інфраструктура</span>
-            <h1 class="font-display font-bold text-4xl md:text-6xl uppercase tracking-wide">Наш простір</h1>
+
+        <!-- Заголовок сторінки -->
+        <div class="mb-12 md:mb-16 reveal">
+            <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-red mb-4">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                23 Серпня | Харків
+            </div>
+            <h1 class="font-display font-bold text-4xl sm:text-6xl md:text-8xl uppercase tracking-wide">
+                Простір Клубу
+            </h1>
+            <p class="text-brand-muted text-sm sm:text-base max-w-2xl mt-4 font-normal leading-relaxed">
+                1000 м² функціональної свободи, сучасна інженерія та продуманий мікроклімат для безкомпромісних тренувань.
+            </p>
         </div>
 
-        <!-- Галерея з якісними тестовими фото -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal" style="transition-delay: 100ms;">
-            <!-- Тренажерний зал (панорама) -->
-            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
-                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Тренажерний зал" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <!-- Блок ключових цифр простору -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16 md:mb-24 reveal">
+            <div class="bg-brand-gray/60 border border-white/5 p-6 md:p-8 rounded-sm">
+                <span class="text-brand-red font-display font-bold text-4xl sm:text-5xl md:text-6xl block mb-1">1000<span class="text-2xl md:text-3xl text-white"> м²</span></span>
+                <span class="text-xs uppercase tracking-widest text-brand-muted font-bold block">Загальна площа клубу</span>
             </div>
-            <!-- Силова зона / Тренажери -->
-            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
-                <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80" alt="Тренажери" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="bg-brand-gray/60 border border-white/5 p-6 md:p-8 rounded-sm">
+                <span class="text-brand-red font-display font-bold text-4xl sm:text-5xl md:text-6xl block mb-1">500<span class="text-2xl md:text-3xl text-white"> м²</span></span>
+                <span class="text-xs uppercase tracking-widest text-brand-muted font-bold block">Тренажерний зал</span>
             </div>
-            <!-- Зона боксу / Ринг -->
-            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
-                <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" alt="Зона боксу" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="bg-brand-gray/60 border border-white/5 p-6 md:p-8 rounded-sm">
+                <span class="text-brand-red font-display font-bold text-4xl sm:text-5xl md:text-6xl block mb-1">76<span class="text-2xl md:text-3xl text-white"> м²</span></span>
+                <span class="text-xs uppercase tracking-widest text-brand-muted font-bold block">Мала зала програм</span>
             </div>
-            <!-- Функціональна зона / TRX -->
-            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
-                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Функціональна зона" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <!-- Зал групових програм -->
-            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
-                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Зал групових занять" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <!-- Преміум роздягальня -->
-            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
-                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="Роздягальня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <!-- Вбиральня -->
-            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
-                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Вбиральня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <!-- Душова зона -->
-            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
-                <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" alt="Душові" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="bg-brand-gray/60 border border-white/5 p-6 md:p-8 rounded-sm">
+                <span class="text-brand-red font-display font-bold text-4xl sm:text-5xl md:text-6xl block mb-1">3<span class="text-2xl md:text-3xl text-white"> рівні</span></span>
+                <span class="text-xs uppercase tracking-widest text-brand-muted font-bold block">Система вентиляції</span>
             </div>
         </div>
+
+        <!-- Інженерія та комфорт -->
+        <div class="mb-16 md:mb-24 reveal">
+            <div class="mb-8 border-b border-white/10 pb-4 flex items-center justify-between">
+                <h2 class="font-display font-bold text-2xl md:text-4xl uppercase tracking-wide">Стандарти та інженерія</h2>
+                <span class="text-brand-red text-xs uppercase tracking-widest font-bold hidden sm:block">Безпека & Комфорт</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-brand-card p-6 border border-white/5 hover:border-brand-red/30 transition-colors">
+                    <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg uppercase mb-2">Еко-покриття</h3>
+                    <p class="text-xs text-brand-muted leading-relaxed">Екологічно чисте спеціалізоване покриття. Підлоги абсолютно без запаху гуми.</p>
+                </div>
+                <div class="bg-brand-card p-6 border border-white/5 hover:border-brand-red/30 transition-colors">
+                    <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4">
+                        <i data-lucide="wind" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg uppercase mb-2">Клімат 3 рівнів</h3>
+                    <p class="text-xs text-brand-muted leading-relaxed">Трирівнева система вентиляції та кондиціювання повітря в усіх групових залах.</p>
+                </div>
+                <div class="bg-brand-card p-6 border border-white/5 hover:border-brand-red/30 transition-colors">
+                    <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4">
+                        <i data-lucide="volume-2" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg uppercase mb-2">Звук Yamaha</h3>
+                    <p class="text-xs text-brand-muted leading-relaxed">Преміальна звукова система Yamaha для створення правильної атмосфери та темпу.</p>
+                </div>
+                <div class="bg-brand-card p-6 border border-white/5 hover:border-brand-red/30 transition-colors">
+                    <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4">
+                        <i data-lucide="key-round" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg uppercase mb-2">Smart-безпека</h3>
+                    <p class="text-xs text-brand-muted leading-relaxed">Сучасні місткі шафи з надійними електронними замками під ваш ключ-браслет.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Детальний огляд зон клубу -->
+        <div class="mb-12 md:mb-16">
+            <h2 class="font-display font-bold text-2xl md:text-4xl uppercase tracking-wide mb-8 border-b border-white/10 pb-4">
+                Зони та оснащення
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+                <!-- Картка 1: Тренажерний зал -->
+                <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group reveal">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Тренажерний зал" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">500 кв.м</span>
+                    </div>
+                    <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Тренажерний зал</h3>
+                            <ul class="space-y-2 text-xs text-brand-muted">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Професійні силові тренажери</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Зона кардіо з автономним кондиціюванням</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Повна лінійка вільних ваг</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Картка 2: Зал боксу -->
+                <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group reveal" style="transition-delay: 100ms;">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
+                        <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" alt="Зона боксу" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Open Space</span>
+                    </div>
+                    <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Боксерський ринг</h3>
+                            <ul class="space-y-2 text-xs text-brand-muted">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Професійний боксерський ринг</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>7 професійних боксерських мішків</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Повний комплект екіпірування для занять</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Картка 3: Функціональний тренінг та інвентар -->
+                <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group reveal" style="transition-delay: 200ms;">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Функціональний тренінг" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Зона TRX</span>
+                    </div>
+                    <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Функціональна зона</h3>
+                            <p class="text-xs text-brand-muted mb-3 font-semibold text-white/90">Шведські стінки та спеціалізований інвентар:</p>
+                            <div class="flex flex-wrap gap-1.5 text-[10px] text-brand-muted uppercase font-bold">
+                                <span class="bg-white/5 px-2 py-1 border border-white/5">Гірі</span>
+                                <span class="bg-white/5 px-2 py-1 border border-white/5">BOSU</span>
+                                <span class="bg-white/5 px-2 py-1 border border-white/5">Боді-бари</span>
+                                <span class="bg-white/5 px-2 py-1 border border-white/5">Петлі TRX</span>
+                                <span class="bg-white/5 px-2 py-1 border border-white/5">Гантелі</span>
+                                <span class="bg-white/5 px-2 py-1 border border-white/5">Фітнес-резинки</span>
+                                <span class="bg-white/5 px-2 py-1 border border-white/5">Пояси</span>
+                                <span class="bg-white/5 px-2 py-1 border border-white/5">Канат</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Картка 4: Мала зала групових занять -->
+                <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group reveal">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Мала зала групових занять" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">76 кв.м</span>
+                    </div>
+                    <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Мала зала програм</h3>
+                            <ul class="space-y-2 text-xs text-brand-muted">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Студія для йоги, пілатесу та танців</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Аудіосистема Yamaha по всьому периметру</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Дерев'яне екологічне покриття підлоги</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Картка 5: Роздягальня -->
+                <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group reveal" style="transition-delay: 100ms;">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="Роздягальня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Smart Locker</span>
+                    </div>
+                    <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Роздягальні</h3>
+                            <ul class="space-y-2 text-xs text-brand-muted">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Сучасні шафи з електронним замком</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Просторі проходи та вентильовані зони</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Фени та комфортна зона відпочинку</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Картка 6: Душові та санвузли -->
+                <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group reveal" style="transition-delay: 200ms;">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
+                        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" alt="Душові" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Recovery</span>
+                    </div>
+                    <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Душові & Санвузли</h3>
+                            <ul class="space-y-2 text-xs text-brand-muted">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Сучасні душові з потужним напором</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Ідеальна чистота та дезінфекція за графіком</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Якісна сантехніка преміум-класу</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </main>
 
+<!-- Футер -->
 <footer id="contacts" class="pt-20 pb-16 border-t border-white/5 bg-brand-dark relative overflow-hidden mt-auto">
     <div class="absolute bottom-[-15%] left-0 w-full text-center pointer-events-none select-none overflow-hidden flex justify-center z-0">
         <h2 class="font-display font-bold text-[24vw] uppercase tracking-tighter leading-none m-0 text-white/[0.03]">ORGANIZM</h2>
@@ -150,7 +355,12 @@
     });
 
     const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); }});
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('active');
+                obs.unobserve(e.target);
+            }
+        });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 </script>
