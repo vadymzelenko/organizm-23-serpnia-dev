@@ -1,0 +1,158 @@
+<!-- Галерея простору клубу з робочими фото-заглушками Unsplash -->
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простір | ORGANIZM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { red: '#E31818', dark: '#050505', gray: '#121212', muted: '#8A8A8A' } }, fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Oswald', 'sans-serif'] }, letterSpacing: { 'widest-xl': '0.2em' } } } }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #050505; color: #FFFFFF; background-image: radial-gradient(circle at 50% 0%, rgba(227, 24, 24, 0.08) 0%, transparent 60%), url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"); background-size: 100% 100%, 150px 150px; background-attachment: fixed; }
+        .glass-nav { background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased font-sans font-medium flex flex-col min-h-screen">
+
+<header class="fixed w-full top-0 z-50 transition-all duration-500 glass-nav" id="navbar">
+    <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
+        <div class="flex items-center justify-between h-20 md:h-24">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity z-50">
+                <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                    <img src="Дизайн без названия.png" alt="Organizm Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-10 h-10 bg-brand-red flex items-center justify-center text-white font-bold font-display text-xl rounded-full\'>O</div>';" class="w-full h-full object-contain drop-shadow-md">
+                </div>
+                <span class="text-xl md:text-2xl font-display font-bold tracking-widest uppercase">Organizm</span>
+            </a>
+            <nav class="hidden lg:flex gap-12 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-muted">
+                <a href="index.html" class="hover:text-white transition-colors">Головна</a>
+                <a href="gallery.html" class="text-white transition-colors">Простір</a>
+                <a href="prices.html" class="hover:text-white transition-colors">Абонементи</a>
+            </nav>
+            <div class="hidden md:flex flex-col items-end z-50">
+                <a href="tel:+380959171212" class="text-xs font-bold tracking-widest hover:text-brand-red transition-colors">095 917 1212</a>
+                <a href="tel:+380679172112" class="text-xs font-bold tracking-widest text-brand-muted hover:text-brand-red transition-colors">067 917 2112</a>
+            </div>
+            <button id="menu-toggle" class="lg:hidden text-white p-2 z-50 relative">
+                <i data-lucide="menu" class="w-6 h-6 menu-icon"></i><i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-40 hidden opacity-0 transition-opacity duration-300 flex-col items-center justify-center">
+    <nav class="flex flex-col gap-8 text-center text-2xl font-display font-bold uppercase tracking-widest mb-12">
+        <a href="index.html" class="hover:text-brand-red transition-colors">Головна</a>
+        <a href="gallery.html" class="text-brand-red">Простір</a>
+        <a href="prices.html" class="hover:text-brand-red transition-colors">Абонементи</a>
+    </nav>
+    <div class="flex flex-col items-center gap-4">
+        <a href="tel:+380959171212" class="text-lg font-bold tracking-widest text-white">095 917 1212</a>
+        <a href="tel:+380679172112" class="text-lg font-bold tracking-widest text-brand-muted">067 917 2112</a>
+    </div>
+</div>
+
+<main class="flex-grow pt-32 pb-20">
+    <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
+        <div class="mb-12 reveal">
+            <span class="text-brand-red text-[10px] font-bold tracking-widest-xl uppercase mb-4 block">Інфраструктура</span>
+            <h1 class="font-display font-bold text-4xl md:text-6xl uppercase tracking-wide">Наш простір</h1>
+        </div>
+
+        <!-- Галерея з якісними тестовими фото -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal" style="transition-delay: 100ms;">
+            <!-- Тренажерний зал (панорама) -->
+            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Тренажерний зал" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <!-- Силова зона / Тренажери -->
+            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
+                <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80" alt="Тренажери" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <!-- Зона боксу / Ринг -->
+            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
+                <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" alt="Зона боксу" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <!-- Функціональна зона / TRX -->
+            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Функціональна зона" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <!-- Зал групових програм -->
+            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Зал групових занять" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <!-- Преміум роздягальня -->
+            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
+                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="Роздягальня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <!-- Вбиральня -->
+            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Вбиральня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <!-- Душова зона -->
+            <div class="aspect-square overflow-hidden border border-white/5 bg-brand-gray group">
+                <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" alt="Душові" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer id="contacts" class="pt-20 pb-16 border-t border-white/5 bg-brand-dark relative overflow-hidden mt-auto">
+    <div class="absolute bottom-[-15%] left-0 w-full text-center pointer-events-none select-none overflow-hidden flex justify-center z-0">
+        <h2 class="font-display font-bold text-[24vw] uppercase tracking-tighter leading-none m-0 text-white/[0.03]">ORGANIZM</h2>
+    </div>
+    <div class="max-w-[85rem] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center reveal">
+            <div class="w-full aspect-video md:aspect-[4/3] lg:aspect-[4/3] border border-white/10 rounded-sm overflow-hidden shadow-2xl relative">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.9061614947474!2d36.2162601!3d50.0318536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a12b00000000%3A0x0000000000000000!2z0YPQuy4gMjMg0JDQstCz0YPRgdGC0LAsIDQzLCDQpdCw0YDRjNC60L7Qsiwg0KXQsNGA0YzQutC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNjEwMDA!5e0!3m2!1sru!2sua!4v1700000000000!5m2!1suk!2sua" width="100%" height="100%" style="border:0; filter: invert(100%) grayscale(100%) contrast(1.2) brightness(0.9);" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="flex flex-col space-y-10 text-left">
+                <div>
+                    <span class="text-brand-red text-[11px] font-bold tracking-widest-xl uppercase mb-3 block">Локація</span>
+                    <p class="font-display font-bold text-3xl md:text-5xl uppercase tracking-wide leading-tight">М. Харків<br>вул. 23 Серпня, 43</p>
+                </div>
+                <div>
+                    <span class="text-brand-red text-[11px] font-bold tracking-widest-xl uppercase mb-3 block">Зв'язок</span>
+                    <div class="flex flex-col gap-1">
+                        <a href="tel:+380959171212" class="font-display font-bold text-3xl md:text-5xl tracking-wide hover:text-brand-red transition-colors">095 917 1212</a>
+                        <a href="tel:+380679172112" class="font-display font-bold text-3xl md:text-5xl tracking-wide text-brand-muted hover:text-brand-red transition-colors">067 917 2112</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://instagram.com/sportclub_organizm" target="_blank" class="inline-flex items-center gap-3 font-display font-bold text-xl md:text-2xl uppercase tracking-wide hover:text-brand-red transition-colors text-brand-muted">
+                        <i data-lucide="instagram" class="w-6 h-6 md:w-8 md:h-8 text-brand-red"></i> @sportclub_organizm
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    lucide.createIcons();
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuBtn.querySelector('.menu-icon');
+    const closeIcon = menuBtn.querySelector('.close-icon');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+        setTimeout(() => mobileMenu.classList.toggle('opacity-0'), 10);
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+        document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
+    });
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); }});
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>

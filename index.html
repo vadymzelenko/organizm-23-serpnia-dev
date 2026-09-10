@@ -1,518 +1,314 @@
-<!-- Повертаємо всі ціни, секцію з тренерами та зберігаємо ефект шероховатого асфальту з виправленою рухомою стрічкою -->
+<!-- Головна сторінка з робочими фото-заглушками Hero та тренерами -->
 <!DOCTYPE html>
 <html lang="uk" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Спортклуб ORGANIZM | Premium Space</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              red: '#E31818',
-              dark: '#050505',
-              gray: '#121212',
-              muted: '#8A8A8A',
-            },
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Oswald', 'sans-serif'],
-          },
-          letterSpacing: {
-            'widest-xl': '0.2em',
-          }
-        }
-      }
+      theme: { extend: { colors: { brand: { red: '#E31818', dark: '#050505', gray: '#121212', muted: '#8A8A8A' } }, fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Oswald', 'sans-serif'] }, letterSpacing: { 'widest-xl': '0.2em' } } }
     }
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-
   <style>
-    /* Эффект шероховатого асфальта (SVG Noise) */
-    body {
-      background-color: #050505;
-      color: #FFFFFF;
-      position: relative;
-      overflow-x: hidden;
-      background-image:
-              radial-gradient(circle at 50% 0%, rgba(227, 24, 24, 0.08) 0%, transparent 60%),
-              url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
-      background-size: 100% 100%, 150px 150px;
-      background-attachment: fixed;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #050505; }
-    ::-webkit-scrollbar-thumb { background: #333; }
-    ::-webkit-scrollbar-thumb:hover { background: #E31818; }
-
-    .glass-nav {
-      background: rgba(5, 5, 5, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .blend-screen { mix-blend-mode: screen; }
-    .glow-red { box-shadow: 0 0 40px rgba(227, 24, 24, 0.2); }
-
-    /* Исправленная бегущая строка */
-    @keyframes ticker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-    .animate-ticker {
-      display: flex;
-      flex-shrink: 0;
-      animation: ticker 30s linear infinite;
-    }
-    .ticker-wrapper:hover .animate-ticker {
-      animation-play-state: paused;
-    }
+    body { background-color: #050505; color: #FFFFFF; background-image: radial-gradient(circle at 50% 0%, rgba(227, 24, 24, 0.08) 0%, transparent 60%), url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"); background-size: 100% 100%, 150px 150px; background-attachment: fixed; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    ::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-track { background: #050505; } ::-webkit-scrollbar-thumb { background: #333; } ::-webkit-scrollbar-thumb:hover { background: #E31818; }
+    .glass-nav { background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+    .animate-ticker { display: flex; flex-shrink: 0; animation: ticker 30s linear infinite; }
   </style>
 </head>
-<body class="antialiased selection:bg-brand-red selection:text-white font-sans font-medium">
+<body class="antialiased selection:bg-brand-red selection:text-white font-sans font-medium flex flex-col min-h-screen">
 
 <header class="fixed w-full top-0 z-50 transition-all duration-500" id="navbar">
   <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
     <div class="flex items-center justify-between h-20 md:h-24">
-      <a href="#" class="flex items-center hover:opacity-80 transition-opacity z-50 relative">
-        <img src="image_2111e9.png" alt="ORGANIZM" class="h-6 md:h-8 lg:h-10 object-contain blend-screen fallback-text">
-        <span class="sr-only text-xl font-display font-bold">ORGANIZM</span>
+      <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity z-50 relative">
+        <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+          <img src="Дизайн без названия.png" alt="Organizm Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-10 h-10 bg-brand-red flex items-center justify-center text-white font-bold font-display text-xl rounded-full\'>O</div>';" class="w-full h-full object-contain drop-shadow-md">
+        </div>
+        <span class="text-xl md:text-2xl font-display font-bold tracking-widest uppercase">Organizm</span>
       </a>
-
-      <!-- Десктопное меню -->
       <nav class="hidden lg:flex gap-12 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-muted">
-        <a href="#about" class="hover:text-white transition-colors">Про нас</a>
-        <a href="#prices" class="hover:text-white transition-colors">Абонементи</a>
-        <a href="#trainers" class="hover:text-white transition-colors">Тренери</a>
-        <a href="#contacts" class="hover:text-white transition-colors">Контакти</a>
+        <a href="index.html" class="text-white transition-colors">Головна</a>
+        <a href="gallery.html" class="hover:text-white transition-colors">Простір</a>
+        <a href="prices.html" class="hover:text-white transition-colors">Абонементи</a>
       </nav>
-
-      <div class="hidden md:block z-50">
-        <a href="tel:+380000000000" class="text-xs font-bold tracking-widest hover:text-brand-red transition-colors">
-          +38 (000) 000-00-00
-        </a>
+      <div class="hidden md:flex flex-col items-end z-50">
+        <a href="tel:+380959171212" class="text-xs font-bold tracking-widest hover:text-brand-red transition-colors">+38 095 917 1212</a>
+        <a href="tel:+380679172112" class="text-xs font-bold tracking-widest text-brand-muted hover:text-brand-red transition-colors">+38 067 917 2112</a>
       </div>
-
-      <!-- Кнопка мобильного меню -->
       <button id="menu-toggle" class="lg:hidden text-white p-2 z-50 relative">
-        <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
-        <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+        <i data-lucide="menu" class="w-6 h-6 menu-icon"></i><i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
       </button>
     </div>
   </div>
 </header>
 
-<!-- Мобильное меню (оверлей) -->
 <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-40 hidden opacity-0 transition-opacity duration-300 flex-col items-center justify-center">
-  <nav class="flex flex-col gap-8 text-center text-2xl font-display font-bold uppercase tracking-widest">
-    <a href="#about" class="mobile-link hover:text-brand-red transition-colors">Про нас</a>
-    <a href="#prices" class="mobile-link hover:text-brand-red transition-colors">Абонементи</a>
-    <a href="#trainers" class="mobile-link hover:text-brand-red transition-colors">Тренери</a>
-    <a href="#contacts" class="mobile-link hover:text-brand-red transition-colors">Контакти</a>
+  <nav class="flex flex-col gap-8 text-center text-2xl font-display font-bold uppercase tracking-widest mb-12">
+    <a href="index.html" class="text-brand-red">Головна</a>
+    <a href="gallery.html" class="hover:text-brand-red transition-colors">Простір</a>
+    <a href="prices.html" class="hover:text-brand-red transition-colors">Абонементи</a>
   </nav>
+  <div class="flex flex-col items-center gap-4">
+    <a href="tel:+380959171212" class="text-lg font-bold tracking-widest text-white">+38 095 917 1212</a>
+    <a href="tel:+380679172112" class="text-lg font-bold tracking-widest text-brand-muted">+38 067 917 2112</a>
+  </div>
 </div>
 
-<section class="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-brand-red rounded-full blur-[150px] md:blur-[200px] opacity-10 pointer-events-none"></div>
-
-  <div class="relative z-10 w-full px-4 sm:px-6 md:px-12 max-w-[100rem] mx-auto reveal mt-8 md:mt-0">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
-
-      <div class="relative w-full aspect-square sm:aspect-[4/3] lg:aspect-square overflow-hidden border border-white/5 order-2 lg:order-1 group mt-8 lg:mt-0">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop" alt="Training Space" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105">
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/60 via-transparent to-brand-dark/20 pointer-events-none"></div>
-      </div>
-
-      <div class="flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2">
-        <div class="inline-block bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-red mb-6 backdrop-blur-sm">
-          Premium Fitness Space
+<main class="flex-grow">
+  <section class="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-brand-red rounded-full blur-[150px] md:blur-[200px] opacity-10 pointer-events-none"></div>
+    <div class="relative z-10 w-full px-4 sm:px-6 md:px-12 max-w-[100rem] mx-auto reveal mt-8 md:mt-0">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <!-- Фото головного екрану Unsplash -->
+        <div class="relative w-full aspect-square sm:aspect-[4/3] lg:aspect-square overflow-hidden border border-white/5 order-1 lg:order-2 group mt-8 lg:mt-0 bg-brand-gray">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" alt="Training Space" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-transparent to-brand-dark/20 pointer-events-none"></div>
         </div>
+        <div class="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+          <div class="inline-block bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-red mb-6 backdrop-blur-sm">Premium Fitness Space</div>
+          <h1 class="font-display font-bold text-[4rem] sm:text-[6rem] xl:text-[9rem] uppercase leading-[1.1] tracking-normal mb-6 text-white">Викуй<br><span class="text-brand-red">Своє тіло</span></h1>
+          <p class="text-sm sm:text-base lg:text-lg text-brand-muted font-medium max-w-md mx-auto lg:mx-0 mb-10 tracking-wide border-l-0 lg:border-l-2 border-brand-red pl-0 lg:pl-4">Простір без компромісів. Функціональний тренінг, професійний бокс, пілатес та повноцінне відновлення.</p>
+          <a href="prices.html" class="group flex items-center justify-center gap-3 bg-brand-red text-white px-8 py-4 font-bold uppercase tracking-widest text-[11px] transition-all hover:bg-white hover:text-brand-dark w-full sm:w-auto">
+            Обрати абонемент <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h1 class="font-display font-bold text-[4rem] sm:text-[6rem] xl:text-[9rem] uppercase leading-[1.1] tracking-normal mb-6 text-white">
-          Викуй<br>
-          <span class="text-brand-red">Своє тіло</span>
-        </h1>
+  <div class="w-full bg-brand-red text-white py-3 border-y border-brand-red/50 ticker-wrapper flex overflow-hidden relative z-20">
+    <div class="animate-ticker text-[10px] sm:text-xs font-bold uppercase tracking-widest-xl whitespace-nowrap">
+      <span class="mx-4 sm:mx-8">Спортклуб Organizm</span> • <span class="mx-4 sm:mx-8">Premium Fitness Space</span> • <span class="mx-4 sm:mx-8">Функціональний тренінг</span> • <span class="mx-4 sm:mx-8">Професійний бокс</span> • <span class="mx-4 sm:mx-8">Пілатес та йога</span> •
+      <span class="mx-4 sm:mx-8">Спортклуб Organizm</span> • <span class="mx-4 sm:mx-8">Premium Fitness Space</span> • <span class="mx-4 sm:mx-8">Функціональний тренінг</span> • <span class="mx-4 sm:mx-8">Професійний бокс</span> • <span class="mx-4 sm:mx-8">Пілатес та йога</span> •
+    </div>
+  </div>
 
-        <p class="text-sm sm:text-base lg:text-lg text-brand-muted font-medium max-w-md mx-auto lg:mx-0 mb-10 tracking-wide border-l-0 lg:border-l-2 border-brand-red pl-0 lg:pl-4">
-          Простір без компромісів. Функціональний тренінг, професійний бокс, пілатес та повноцінне відновлення.
+  <section id="about" class="py-20 md:py-32 relative border-t border-white/5 bg-brand-dark/30 backdrop-blur-sm">
+    <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
+      <div class="flex flex-col items-center mb-16 md:mb-24 reveal">
+        <h2 class="font-display font-bold text-4xl sm:text-5xl md:text-7xl uppercase tracking-wide text-center leading-[1.2]">Естетика. Сила.<br><span class="text-[#444]">Дисципліна.</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div class="bg-brand-gray/80 p-8 md:p-10 border border-white/5 hover:border-brand-red/40 transition-colors reveal group">
+          <div class="w-12 h-12 bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-brand-red/10 transition-colors"><i data-lucide="dumbbell" class="w-5 h-5 text-brand-red"></i></div>
+          <h3 class="font-display font-bold text-2xl md:text-3xl uppercase tracking-wide mb-3">Обладнання</h3>
+          <p class="text-brand-muted font-medium text-sm">Топові тренажери, зони вільних ваг та функціонального тренінгу, вивірені до міліметра.</p>
+        </div>
+        <div class="bg-brand-gray/80 p-8 md:p-10 border border-white/5 hover:border-brand-red/40 transition-colors reveal group" style="transition-delay: 100ms;">
+          <div class="w-12 h-12 bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-brand-red/10 transition-colors"><i data-lucide="swords" class="w-5 h-5 text-brand-red"></i></div>
+          <h3 class="font-display font-bold text-2xl md:text-3xl uppercase tracking-wide mb-3">Єдиноборства</h3>
+          <p class="text-brand-muted font-medium text-sm">Професійна зона для боксу. Групові та персональні тренування з наставниками чемпіонського рівня.</p>
+        </div>
+        <div class="bg-brand-gray/80 p-8 md:p-10 border border-white/5 hover:border-brand-red/40 transition-colors reveal group" style="transition-delay: 200ms;">
+          <div class="w-12 h-12 bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-brand-red/10 transition-colors"><i data-lucide="activity" class="w-5 h-5 text-brand-red"></i></div>
+          <h3 class="font-display font-bold text-2xl md:text-3xl uppercase tracking-wide mb-3">Відновлення</h3>
+          <p class="text-brand-muted font-medium text-sm">Стретчинг, пілатес, йога та масажний кабінет. Повноцінна регенерація після навантажень.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="py-20 md:py-32 border-t border-white/5 bg-brand-dark">
+    <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 reveal">
+        <div>
+          <span class="text-brand-red text-[10px] font-bold tracking-widest-xl uppercase mb-4 block">Твій час</span>
+          <h2 class="font-display font-bold text-4xl md:text-6xl uppercase tracking-wide">Розклад занять</h2>
+        </div>
+        <p class="text-brand-muted text-sm max-w-sm mt-4 md:mt-0 font-medium leading-relaxed">
+          Детальний розклад на тиждень. Слідкуйте за оновленнями та скасуваннями в нашому
+          <a href="https://instagram.com/sportclub_organizm" target="_blank" class="text-white hover:text-brand-red underline underline-offset-4 transition-colors">Instagram</a>.
         </p>
-
-        <a href="#prices" class="group flex items-center justify-center gap-3 bg-brand-red text-white px-8 py-4 font-bold uppercase tracking-widest text-[11px] transition-all hover:bg-white hover:text-brand-dark glow-red w-full sm:w-auto">
-          Обрати абонемент
-          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform font-bold"></i>
-        </a>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- Бегущая строка -->
-<div class="w-full bg-brand-red text-white py-3 border-y border-brand-red/50 ticker-wrapper flex overflow-hidden relative z-20">
-  <div class="animate-ticker text-[10px] sm:text-xs font-bold uppercase tracking-widest-xl whitespace-nowrap">
-    <span class="mx-4 sm:mx-8">Спортклуб Organizm</span> •
-    <span class="mx-4 sm:mx-8">Premium Fitness Space</span> •
-    <span class="mx-4 sm:mx-8">Функціональний тренінг</span> •
-    <span class="mx-4 sm:mx-8">Професійний бокс</span> •
-    <span class="mx-4 sm:mx-8">Пілатес та йога</span> •
-    <span class="mx-4 sm:mx-8">Спортклуб Organizm</span> •
-    <span class="mx-4 sm:mx-8">Premium Fitness Space</span> •
-    <span class="mx-4 sm:mx-8">Функціональний тренінг</span> •
-    <span class="mx-4 sm:mx-8">Професійний бокс</span> •
-    <span class="mx-4 sm:mx-8">Пілатес та йога</span> •
-  </div>
-  <div class="animate-ticker text-[10px] sm:text-xs font-bold uppercase tracking-widest-xl whitespace-nowrap" aria-hidden="true">
-    <span class="mx-4 sm:mx-8">Спортклуб Organizm</span> •
-    <span class="mx-4 sm:mx-8">Premium Fitness Space</span> •
-    <span class="mx-4 sm:mx-8">Функціональний тренінг</span> •
-    <span class="mx-4 sm:mx-8">Професійний бокс</span> •
-    <span class="mx-4 sm:mx-8">Пілатес та йога</span> •
-    <span class="mx-4 sm:mx-8">Спортклуб Organizm</span> •
-    <span class="mx-4 sm:mx-8">Premium Fitness Space</span> •
-    <span class="mx-4 sm:mx-8">Функціональний тренінг</span> •
-    <span class="mx-4 sm:mx-8">Професійний бокс</span> •
-    <span class="mx-4 sm:mx-8">Пілатес та йога</span> •
-  </div>
-</div>
-
-<section id="about" class="py-20 md:py-32 relative border-t border-white/5 bg-brand-dark/30 backdrop-blur-sm">
-  <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
-    <div class="flex flex-col items-center mb-16 md:mb-24 reveal">
-      <h2 class="font-display font-bold text-4xl sm:text-5xl md:text-7xl uppercase tracking-wide text-center leading-[1.2]">
-        Естетика. Сила.<br>
-        <span class="text-[#444]">Дисципліна.</span>
-      </h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-      <div class="bg-brand-gray/80 p-8 md:p-10 border border-white/5 hover:border-brand-red/40 transition-colors reveal group backdrop-blur-md">
-        <div class="w-12 h-12 bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-brand-red/10 transition-colors">
-          <i data-lucide="dumbbell" class="w-5 h-5 text-brand-red"></i>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 reveal" style="transition-delay: 100ms;">
+        <div class="bg-brand-gray/50 border border-white/5 p-6 md:p-8 rounded-sm">
+          <h3 class="font-display font-bold text-2xl text-brand-red mb-6 border-b border-white/10 pb-4">Понеділок / Середа / П'ятниця</h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
+              <div>
+                <span class="block font-bold uppercase text-lg">Бокс (Група)</span>
+                <span class="text-xs text-brand-muted">В. Натєсов / О. Солдатенко</span>
+              </div>
+              <span class="font-display font-bold text-xl text-white">18:00</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
+              <div>
+                <span class="block font-bold uppercase text-lg">GT MIX</span>
+                <span class="text-xs text-brand-muted">К. Зарицька</span>
+              </div>
+              <span class="font-display font-bold text-xl text-white">19:00</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
+              <div>
+                <span class="block font-bold uppercase text-lg">Дитячий Кросфіт</span>
+                <span class="text-xs text-brand-muted">Тренер</span>
+              </div>
+              <span class="font-display font-bold text-xl text-white">16:00</span>
+            </li>
+          </ul>
         </div>
-        <h3 class="font-display font-bold text-2xl md:text-3xl uppercase tracking-wide mb-3">Обладнання</h3>
-        <p class="text-brand-muted font-medium leading-relaxed text-sm">Топові тренажери, зони вільних ваг та функціонального тренінгу, вивірені до міліметра.</p>
-      </div>
 
-      <div class="bg-brand-gray/80 p-8 md:p-10 border border-white/5 hover:border-brand-red/40 transition-colors reveal group backdrop-blur-md" style="transition-delay: 100ms;">
-        <div class="w-12 h-12 bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-brand-red/10 transition-colors">
-          <i data-lucide="swords" class="w-5 h-5 text-brand-red"></i>
+        <div class="bg-brand-gray/50 border border-white/5 p-6 md:p-8 rounded-sm">
+          <h3 class="font-display font-bold text-2xl text-brand-red mb-6 border-b border-white/10 pb-4">Вівторок / Четвер / Субота</h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
+              <div>
+                <span class="block font-bold uppercase text-lg">Kangoo Jumps</span>
+                <span class="text-xs text-brand-muted">Тренер</span>
+              </div>
+              <span class="font-display font-bold text-xl text-white">10:00</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
+              <div>
+                <span class="block font-bold uppercase text-lg">Taekwondo (Діти)</span>
+                <span class="text-xs text-brand-muted">Е. Гордіонок</span>
+              </div>
+              <span class="font-display font-bold text-xl text-white">16:30</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
+              <div>
+                <span class="block font-bold uppercase text-lg">Pilates / Stretching</span>
+                <span class="text-xs text-brand-muted">Тренер</span>
+              </div>
+              <span class="font-display font-bold text-xl text-white">18:30</span>
+            </li>
+          </ul>
         </div>
-        <h3 class="font-display font-bold text-2xl md:text-3xl uppercase tracking-wide mb-3">Єдиноборства</h3>
-        <p class="text-brand-muted font-medium leading-relaxed text-sm">Професійна зона для боксу. Групові та персональні тренування з наставниками чемпіонського рівня.</p>
-      </div>
-
-      <div class="bg-brand-gray/80 p-8 md:p-10 border border-white/5 hover:border-brand-red/40 transition-colors reveal group backdrop-blur-md" style="transition-delay: 200ms;">
-        <div class="w-12 h-12 bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-brand-red/10 transition-colors">
-          <i data-lucide="activity" class="w-5 h-5 text-brand-red"></i>
-        </div>
-        <h3 class="font-display font-bold text-2xl md:text-3xl uppercase tracking-wide mb-3">Відновлення</h3>
-        <p class="text-brand-muted font-medium leading-relaxed text-sm">Стретчинг, пілатес, йога та масажний кабінет. Повноцінна регенерація після навантажень.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Повний прайс-лист -->
-<section id="prices" class="py-20 md:py-32 border-t border-white/5 bg-brand-dark/10">
-  <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
-    <div class="mb-12 md:mb-20 reveal flex flex-col md:flex-row justify-between items-end gap-6">
-      <div>
-        <span class="text-brand-red text-[10px] font-bold tracking-widest-xl uppercase mb-4 block">Прайс-лист</span>
-        <h2 class="font-display font-bold text-5xl md:text-8xl uppercase tracking-wide">Інвестиції</h2>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 xl:gap-x-24 gap-y-16">
-
-      <!-- Ліва колонка -->
-      <div class="space-y-16 reveal">
-
+  <section id="trainers" class="py-20 md:py-32 border-y border-white/5 relative bg-brand-dark/50">
+    <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 reveal">
         <div>
-          <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Тренажерний зал</h3>
-          <div class="space-y-4">
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Разове відвідування</span>
-              <span class="font-display font-bold text-2xl">300 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">1 місяць до 12:00</span>
-              <span class="font-display font-bold text-2xl">1000 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">1 місяць безліміт</span>
-              <span class="font-display font-bold text-2xl">1500 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">3 місяці безліміт</span>
-              <span class="font-display font-bold text-2xl">4100 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">6 місяців безліміт</span>
-              <span class="font-display font-bold text-2xl">6900 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-brand-red/30 hover:border-brand-red transition-colors">
-              <span class="text-white font-bold text-sm uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">1 рік безліміт</span>
-              <span class="font-display font-bold text-2xl text-brand-red">13200 ₴</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="font-display font-bold text-2xl md:text-3xl uppercase tracking-wide mb-6 text-brand-muted">Сімейний абонемент</h4>
-          <div class="space-y-4">
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Для двох</span>
-              <span class="font-display font-bold text-2xl">2500 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Для трьох</span>
-              <span class="font-display font-bold text-2xl">3500 ₴</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Групові заняття</h3>
-          <p class="text-xs text-brand-muted font-bold uppercase tracking-widest leading-relaxed mb-8">
-            TRX · Functional · Pilates · Stretching · Zumba · Хатха Йога · Fly Mix
-          </p>
-          <div class="space-y-4">
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Разове заняття</span>
-              <span class="font-display font-bold text-2xl">300 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">8 занять</span>
-              <span class="font-display font-bold text-2xl">1600 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">12 занять</span>
-              <span class="font-display font-bold text-2xl">2100 ₴</span>
-            </div>
-          </div>
-
-          <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mt-8 mb-4">Дитячі групи & Kangoo Jumps</h4>
-          <div class="space-y-4">
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Kangoo (Разове / 12 зан.)</span>
-              <span class="font-display font-bold text-2xl">400 / 3000 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Дитячі (Разове / 12 зан.)</span>
-              <span class="font-display font-bold text-2xl">200 / 1500 ₴</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Права колонка -->
-      <div class="space-y-16 reveal" style="transition-delay: 100ms;">
-
-        <div>
-          <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">З тренером</h3>
-
-          <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Індивідуальні (1 на 1)</h4>
-          <div class="space-y-4 mb-10">
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Разове заняття</span>
-              <span class="font-display font-bold text-2xl">600 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">8 занять</span>
-              <span class="font-display font-bold text-2xl">4400 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">12 занять</span>
-              <span class="font-display font-bold text-2xl">6600 ₴</span>
-            </div>
-          </div>
-
-          <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Персональні (Групою)</h4>
-          <div class="space-y-4">
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Разове заняття</span>
-              <span class="font-display font-bold text-2xl">450 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">8 занять</span>
-              <span class="font-display font-bold text-2xl">3200 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">12 занять</span>
-              <span class="font-display font-bold text-2xl">4500 ₴</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Бокс & Спецкурси</h3>
-
-          <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Бокс (В. Натєсов / О. Солдатенко)</h4>
-          <div class="space-y-4 mb-10">
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Група (Разове / Безліміт)</span>
-              <span class="font-display font-bold text-2xl">300 / 3000 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Персонально (Разове)</span>
-              <span class="font-display font-bold text-2xl">600 - 800 ₴</span>
-            </div>
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Перс. 12 занять (О.С.)</span>
-              <span class="font-display font-bold text-2xl">4400 ₴</span>
-            </div>
-          </div>
-
-          <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">GT MIX (Катерина Зарицька)</h4>
-          <div class="space-y-4 mb-10">
-            <div class="flex flex-wrap sm:flex-nowrap justify-between items-end pb-3 border-b border-white/5">
-              <span class="text-brand-muted text-sm font-semibold uppercase tracking-wider w-full sm:w-auto mb-1 sm:mb-0">Разове / 12 занять</span>
-              <span class="font-display font-bold text-2xl">250 / 2200 ₴</span>
-            </div>
-          </div>
-
-          <div class="bg-white/5 p-6 border border-white/10 flex items-center justify-between backdrop-blur-sm">
-            <div>
-              <span class="block font-display font-bold uppercase tracking-wide mb-1 text-xl md:text-2xl">Настільний теніс</span>
-              <span class="text-[10px] text-brand-muted font-bold uppercase tracking-widest">Оренда столу</span>
-            </div>
-            <span class="font-display font-bold text-2xl md:text-3xl text-brand-red">200 ₴ / год</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Повернута секція з Тренерами -->
-<section id="trainers" class="py-20 md:py-32 border-y border-white/5 relative bg-brand-dark/50">
-  <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 reveal">
-      <div>
-        <span class="text-brand-red text-[10px] font-bold tracking-widest-xl uppercase mb-4 block">Професіонали</span>
-        <h2 class="font-display font-bold text-5xl md:text-8xl uppercase tracking-wide">Команда</h2>
-      </div>
-      <a href="https://instagram.com/sportclub_organizm" target="_blank" class="inline-flex items-center gap-3 mt-8 md:mt-0 text-[11px] font-bold uppercase tracking-widest-xl hover:text-brand-red transition-colors group">
-        Всі резиденти
-        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform font-bold"></i>
-      </a>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-      <div class="group relative aspect-[3/4] overflow-hidden reveal bg-brand-gray border border-white/5">
-        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1000&auto=format&fit=crop" alt="Віталій Натєсов" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-90"></div>
-        <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full border-l-2 border-transparent group-hover:border-brand-red transition-colors">
-          <h4 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-2 text-white leading-tight">Віталій<br>Натєсов</h4>
-          <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl">Бокс</p>
+          <span class="text-brand-red text-[10px] font-bold tracking-widest-xl uppercase mb-4 block">Професіонали</span>
+          <h2 class="font-display font-bold text-5xl md:text-8xl uppercase tracking-wide">Команда</h2>
         </div>
       </div>
-
-      <div class="group relative aspect-[3/4] overflow-hidden reveal bg-brand-gray border border-white/5" style="transition-delay: 100ms;">
-        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1000&auto=format&fit=crop" alt="Олександр Солдатенко" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-90"></div>
-        <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full border-l-2 border-transparent group-hover:border-brand-red transition-colors">
-          <h4 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-2 text-white leading-tight">Олександр<br>Солдатенко</h4>
-          <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl">Бокс / Тренажерний</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div class="group relative aspect-[3/4] overflow-hidden reveal bg-brand-gray border border-white/5">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=800&q=80" alt="Віталій Натєсов" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Віталій<br>Натєсов</h4>
+            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Бокс / Персональний</p>
+          </div>
         </div>
-      </div>
-
-      <div class="group relative aspect-[3/4] overflow-hidden reveal bg-brand-gray border border-white/5" style="transition-delay: 200ms;">
-        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1000&auto=format&fit=crop" alt="Катерина Зарицька" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-90"></div>
-        <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full border-l-2 border-transparent group-hover:border-brand-red transition-colors">
-          <h4 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-2 text-white leading-tight">Катерина<br>Зарицька</h4>
-          <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl">GT MIX</p>
+        <div class="group relative aspect-[3/4] overflow-hidden reveal bg-brand-gray border border-white/5" style="transition-delay: 100ms;">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="Олександр Солдатенко" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Олександр<br>Солдатенко</h4>
+            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Бокс / Зал</p>
+          </div>
+        </div>
+        <div class="group relative aspect-[3/4] overflow-hidden reveal bg-brand-gray border border-white/5" style="transition-delay: 200ms;">
+          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80" alt="Станіслав Домінчак" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Станіслав<br>Домінчак</h4>
+            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Персональний тренер</p>
+          </div>
+        </div>
+        <div class="group relative aspect-[3/4] overflow-hidden reveal bg-brand-gray border border-white/5">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Катерина Зарицька" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Катерина<br>Зарицька</h4>
+            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">GT MIX</p>
+          </div>
+        </div>
+        <div class="group relative aspect-[3/4] overflow-hidden reveal bg-brand-gray border border-white/5" style="transition-delay: 100ms;">
+          <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=800&q=80" alt="Микита Чепелєв" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Микита<br>Чепелєв</h4>
+            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Персональний тренер</p>
+          </div>
+        </div>
+        <div class="group relative aspect-[3/4] overflow-hidden reveal bg-brand-gray border border-white/5" style="transition-delay: 200ms;">
+          <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80" alt="Евеліна Гордіонок" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Евеліна<br>Гордіонок</h4>
+            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Тхеквондо</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="py-20 md:py-32 border-b border-white/5 bg-brand-dark/30 backdrop-blur-sm">
-  <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-
-      <div class="reveal">
-        <h2 class="font-display font-bold text-4xl sm:text-5xl uppercase tracking-wide mb-8 md:mb-12">Режим роботи</h2>
-        <div class="space-y-6">
-          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-white/10 pb-4">
-            <span class="text-brand-muted text-xs sm:text-sm font-bold uppercase tracking-widest mb-2 sm:mb-0">Понеділок - П'ятниця</span>
-            <span class="font-display font-bold text-2xl sm:text-3xl">08:00 — 21:00</span>
-          </div>
-          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-white/10 pb-4">
-            <span class="text-brand-muted text-xs sm:text-sm font-bold uppercase tracking-widest mb-2 sm:mb-0">Субота - Неділя</span>
-            <span class="font-display font-bold text-2xl sm:text-3xl">На рецепції</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal" style="transition-delay: 100ms;">
-        <h2 class="font-display font-bold text-4xl sm:text-5xl uppercase tracking-wide mb-8 md:mb-12">Правила Клубу</h2>
-        <div class="space-y-8 md:space-y-12">
-          <div class="flex gap-4 md:gap-6 items-start">
-            <span class="font-display font-bold text-3xl md:text-4xl text-brand-red leading-none mt-1">01</span>
-            <div>
-              <h5 class="font-sans font-bold text-base md:text-lg uppercase tracking-wide mb-2">Змінне взуття та рушник</h5>
-              <p class="text-brand-muted font-medium text-xs md:text-sm leading-relaxed">Вхід у тренувальні зони суворо в чистому взутті. Використання рушника на тренажерах є обов'язковим.</p>
+  <section class="py-20 md:py-32 border-b border-white/5 bg-brand-dark/30 backdrop-blur-sm">
+    <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <div class="reveal">
+          <h2 class="font-display font-bold text-4xl sm:text-5xl uppercase tracking-wide mb-8 md:mb-12">Режим роботи</h2>
+          <div class="space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-white/10 pb-4">
+              <span class="text-brand-muted text-xs sm:text-sm font-bold uppercase tracking-widest mb-2 sm:mb-0">Понеділок - П'ятниця</span>
+              <span class="font-display font-bold text-2xl sm:text-3xl">08:00 — 21:00</span>
             </div>
-          </div>
-          <div class="flex gap-4 md:gap-6 items-start">
-            <span class="font-display font-bold text-3xl md:text-4xl text-brand-red leading-none mt-1">02</span>
-            <div>
-              <h5 class="font-sans font-bold text-base md:text-lg uppercase tracking-wide mb-2">Повага до інвентарю</h5>
-              <p class="text-brand-muted font-medium text-xs md:text-sm leading-relaxed">Після підходу розберіть тренажер та поверніть гантелі на стійку. Підтримуйте порядок для себе та інших.</p>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-white/10 pb-4">
+              <span class="text-brand-muted text-xs sm:text-sm font-bold uppercase tracking-widest mb-2 sm:mb-0">Субота - Неділя</span>
+              <span class="font-display font-bold text-2xl sm:text-3xl">09:00 — 17:00</span>
             </div>
           </div>
         </div>
+        <div class="reveal" style="transition-delay: 100ms;">
+          <h2 class="font-display font-bold text-4xl sm:text-5xl uppercase tracking-wide mb-8 md:mb-12">Правила Клубу</h2>
+          <div class="space-y-8 md:space-y-12">
+            <div class="flex gap-4 md:gap-6 items-start">
+              <span class="font-display font-bold text-3xl md:text-4xl text-brand-red leading-none mt-1">01</span>
+              <div>
+                <h5 class="font-sans font-bold text-base md:text-lg uppercase tracking-wide mb-2">Змінне взуття та рушник</h5>
+                <p class="text-brand-muted font-medium text-xs md:text-sm leading-relaxed">Вхід у тренувальні зони суворо в чистому взутті. Використання рушника на тренажерах є обов'язковим.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 md:gap-6 items-start">
+              <span class="font-display font-bold text-3xl md:text-4xl text-brand-red leading-none mt-1">02</span>
+              <div>
+                <h5 class="font-sans font-bold text-base md:text-lg uppercase tracking-wide mb-2">Повага до інвентарю</h5>
+                <p class="text-brand-muted font-medium text-xs md:text-sm leading-relaxed">Після підходу розберіть тренажер та поверніть гантелі на стійку. Підтримуйте порядок для себе та інших.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<footer id="contacts" class="pt-20 md:pt-32 pb-8 relative overflow-hidden bg-brand-dark/80">
-  <div class="absolute bottom-0 left-0 w-full text-center pointer-events-none opacity-[0.03] select-none overflow-hidden">
-    <h2 class="font-display font-bold text-[20vw] md:text-[18vw] uppercase tracking-wide leading-none m-0">ORGANIZM</h2>
+<footer id="contacts" class="pt-20 pb-16 border-t border-white/5 bg-brand-dark relative overflow-hidden mt-auto">
+  <div class="absolute bottom-[-15%] left-0 w-full text-center pointer-events-none select-none overflow-hidden flex justify-center z-0">
+    <h2 class="font-display font-bold text-[24vw] uppercase tracking-tighter leading-none m-0 text-white/[0.03]">ORGANIZM</h2>
   </div>
 
-  <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-20 md:mb-32 reveal">
-      <div class="h-[300px] md:h-[400px] border border-white/10 relative order-2 lg:order-1">
-        <div class="absolute inset-0 bg-brand-dark/30 pointer-events-none z-10"></div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.9061614947474!2d36.2162601!3d50.0318536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a12b00000000%3A0x0000000000000000!2z0YPQuy4gMjMg0JDQstCz0YPRgdGC0LAsIDQzLCDQpdCw0YDRjNC60L7Qsiwg0KXQsNGA0YzQutC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNjEwMDA!5e0!3m2!1sru!2sua!4v1700000000000!5m2!1suk!2sua" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(100%) contrast(1.2);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="max-w-[85rem] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center reveal">
+      <div class="w-full aspect-video md:aspect-[4/3] lg:aspect-[4/3] border border-white/10 rounded-sm overflow-hidden shadow-2xl relative">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.9061614947474!2d36.2162601!3d50.0318536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a12b00000000%3A0x0000000000000000!2z0YPQuy4gMjMg0JDQstCz0YPRgdGC0LAsIDQzLCDQpdCw0YDRjNC60L7Qsiwg0KXQsNGA0YzQutC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNjEwMDA!5e0!3m2!1sru!2sua!4v1700000000000!5m2!1suk!2sua" width="100%" height="100%" style="border:0; filter: invert(100%) grayscale(100%) contrast(1.2) brightness(0.9);" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
-      <div class="flex flex-col justify-center space-y-12 md:space-y-16 order-1 lg:order-2">
+      <div class="flex flex-col space-y-10 text-left">
         <div>
-          <span class="text-brand-red text-[10px] font-bold tracking-widest-xl uppercase mb-2 md:mb-3 block">Локація</span>
-          <p class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide">м. Харків<br>вул. 23 Серпня, 43</p>
+          <span class="text-brand-red text-[11px] font-bold tracking-widest-xl uppercase mb-3 block">Локація</span>
+          <p class="font-display font-bold text-3xl md:text-5xl uppercase tracking-wide leading-tight">М. Харків<br>вул. 23 Серпня, 43</p>
         </div>
         <div>
-          <span class="text-brand-red text-[10px] font-bold tracking-widest-xl uppercase mb-2 md:mb-3 block">Зв'язок</span>
-          <a href="tel:+380000000000" class="font-display font-bold text-3xl md:text-4xl tracking-wide hover:text-brand-red transition-colors block">+38 (000) 000-00-00</a>
+          <span class="text-brand-red text-[11px] font-bold tracking-widest-xl uppercase mb-3 block">Зв'язок</span>
+          <div class="flex flex-col gap-1">
+            <a href="tel:+380959171212" class="font-display font-bold text-3xl md:text-5xl tracking-wide hover:text-brand-red transition-colors">095 917 1212</a>
+            <a href="tel:+380679172112" class="font-display font-bold text-3xl md:text-5xl tracking-wide text-brand-muted hover:text-brand-red transition-colors">067 917 2112</a>
+          </div>
+        </div>
+        <div>
+          <a href="https://instagram.com/sportclub_organizm" target="_blank" class="inline-flex items-center gap-3 font-display font-bold text-xl md:text-2xl uppercase tracking-wide hover:text-brand-red transition-colors text-brand-muted">
+            <i data-lucide="instagram" class="w-6 h-6 md:w-8 md:h-8 text-brand-red"></i> @sportclub_organizm
+          </a>
         </div>
       </div>
     </div>
@@ -521,70 +317,36 @@
 
 <script>
   lucide.createIcons();
-
   const menuBtn = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIcon = menuBtn.querySelector('.menu-icon');
   const closeIcon = menuBtn.querySelector('.close-icon');
   const mobileLinks = document.querySelectorAll('.mobile-link');
-  let isMenuOpen = false;
 
   function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-    if (isMenuOpen) {
-      mobileMenu.classList.remove('hidden');
-      mobileMenu.classList.add('flex');
-      setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
-      menuIcon.classList.add('hidden');
-      closeIcon.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    } else {
-      mobileMenu.classList.add('opacity-0');
-      setTimeout(() => {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('flex');
-      }, 300);
-      menuIcon.classList.remove('hidden');
-      closeIcon.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+    setTimeout(() => mobileMenu.classList.toggle('opacity-0'), 10);
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+    document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
   }
 
   menuBtn.addEventListener('click', toggleMenu);
+  mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if(isMenuOpen) toggleMenu();
-    });
-  });
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        observer.unobserve(entry.target);
+        obs.unobserve(entry.target);
       }
     });
-  }, observerOptions);
-
-  document.querySelectorAll('.reveal').forEach((el) => {
-    observer.observe(el);
-  });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
   window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    if (window.scrollY > 20) {
-      nav.classList.add('glass-nav');
-      nav.classList.remove('py-4');
-    } else {
-      nav.classList.remove('glass-nav');
-    }
+    document.getElementById('navbar').classList.toggle('glass-nav', window.scrollY > 20);
   });
 </script>
 </body>

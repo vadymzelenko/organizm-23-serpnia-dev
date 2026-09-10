@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Абонементи | ORGANIZM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: { red: '#E31818', dark: '#050505', gray: '#121212', muted: '#8A8A8A' } }, fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Oswald', 'sans-serif'] }, letterSpacing: { 'widest-xl': '0.2em' } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { background-color: #050505; color: #FFFFFF; background-image: radial-gradient(circle at 50% 0%, rgba(227, 24, 24, 0.08) 0%, transparent 60%), url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"); background-size: 100% 100%, 150px 150px; background-attachment: fixed; }
+    .glass-nav { background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="antialiased font-sans font-medium flex flex-col min-h-screen">
+
+<header class="fixed w-full top-0 z-50 transition-all duration-500 glass-nav" id="navbar">
+  <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
+    <div class="flex items-center justify-between h-20 md:h-24">
+      <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity z-50">
+        <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+          <!-- Оновлений фрагмент рядка з логотипом у prices.html -->
+          <img src="Дизайн без названия.png" alt="Organizm Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-10 h-10 bg-brand-red flex items-center justify-center text-white font-bold font-display text-xl rounded-full\'>O</div>';" class="w-full h-full object-contain drop-shadow-md">
+        </div>
+        <span class="text-xl md:text-2xl font-display font-bold tracking-widest uppercase">Organizm</span>
+      </a>
+      <nav class="hidden lg:flex gap-12 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-muted">
+        <a href="index.html" class="hover:text-white transition-colors">Головна</a>
+        <a href="gallery.html" class="hover:text-white transition-colors">Простір</a>
+        <a href="prices.html" class="text-white transition-colors">Абонементи</a>
+      </nav>
+      <div class="hidden md:flex flex-col items-end z-50">
+        <a href="tel:+380959171212" class="text-xs font-bold tracking-widest hover:text-brand-red transition-colors">095 917 1212</a>
+        <a href="tel:+380679172112" class="text-xs font-bold tracking-widest text-brand-muted hover:text-brand-red transition-colors">067 917 2112</a>
+      </div>
+      <button id="menu-toggle" class="lg:hidden text-white p-2 z-50 relative">
+        <i data-lucide="menu" class="w-6 h-6 menu-icon"></i><i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-40 hidden opacity-0 transition-opacity duration-300 flex-col items-center justify-center">
+  <nav class="flex flex-col gap-8 text-center text-2xl font-display font-bold uppercase tracking-widest mb-12">
+    <a href="index.html" class="hover:text-brand-red transition-colors">Головна</a>
+    <a href="gallery.html" class="hover:text-brand-red transition-colors">Простір</a>
+    <a href="prices.html" class="text-brand-red">Абонементи</a>
+  </nav>
+  <div class="flex flex-col items-center gap-4">
+    <a href="tel:+380959171212" class="text-lg font-bold tracking-widest text-white">095 917 1212</a>
+    <a href="tel:+380679172112" class="text-lg font-bold tracking-widest text-brand-muted">067 917 2112</a>
+  </div>
+</div>
+
+<main class="flex-grow pt-32 pb-20">
+  <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
+    <div class="mb-12 md:mb-20 reveal">
+      <span class="text-brand-red text-[10px] font-bold tracking-widest-xl uppercase mb-4 block">Прайс-лист</span>
+      <h1 class="font-display font-bold text-5xl md:text-8xl uppercase tracking-wide">Інвестиції</h1>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 xl:gap-x-24 gap-y-16">
+
+      <!-- Ліва колонка -->
+      <div class="space-y-16 reveal">
+        <div>
+          <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Тренажерний зал</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Разове відвідування</span><span class="font-display font-bold text-xl md:text-2xl">300 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">1 місяць до 12:00</span><span class="font-display font-bold text-xl md:text-2xl">1000 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">1 місяць безліміт</span><span class="font-display font-bold text-xl md:text-2xl">1500 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">3 місяці безліміт</span><span class="font-display font-bold text-xl md:text-2xl">4100 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">6 місяців безліміт</span><span class="font-display font-bold text-xl md:text-2xl">6900 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-brand-red/30 hover:border-brand-red transition-colors"><span class="text-white font-bold text-sm uppercase tracking-wider">1 рік безліміт</span><span class="font-display font-bold text-xl md:text-2xl text-brand-red">13200 ₴</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Спец. Напрямки</h3>
+
+          <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4 mt-6">GT MIX (Катерина Зарицька)</h4>
+          <div class="space-y-4 mb-8">
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Разове заняття</span><span class="font-display font-bold text-xl md:text-2xl">300 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">8 занять</span><span class="font-display font-bold text-xl md:text-2xl">1600 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">12 занять</span><span class="font-display font-bold text-xl md:text-2xl">2200 ₴</span></div>
+          </div>
+
+          <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Дитячі напрямки & Kangoo</h4>
+          <div class="space-y-4 mb-8">
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Kangoo (Разове / 8 / 12)</span><span class="font-display font-bold text-xl md:text-2xl">400 / 2200 / 3000 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Дит. Кросфіт (Раз. / 8 / 12)</span><span class="font-display font-bold text-xl md:text-2xl">200 / 1100 / 1500 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Taekwondo (Е. Гордіонок / Разове)</span><span class="font-display font-bold text-xl md:text-2xl">300 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Taekwondo (12 занять)</span><span class="font-display font-bold text-xl md:text-2xl">1800 ₴</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Права колонка -->
+      <div class="space-y-16 reveal" style="transition-delay: 100ms;">
+        <div>
+          <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">З тренером</h3>
+
+          <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Індивідуальні (1 на 1)</h4>
+          <div class="space-y-4 mb-10">
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">В. Натєсов (Разове)</span><span class="font-display font-bold text-xl md:text-2xl">800 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider text-left">Солдатенко / Домінчак / Чепелєв <br><span class="text-[10px] normal-case tracking-normal">(Разове заняття)</span></span><span class="font-display font-bold text-xl md:text-2xl">600 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">8 занять (О.С. / С.Д.)</span><span class="font-display font-bold text-xl md:text-2xl">3400 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">12 занять (О.С. / С.Д.)</span><span class="font-display font-bold text-xl md:text-2xl">4400 ₴</span></div>
+          </div>
+
+          <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Персональні (В групі)</h4>
+          <div class="space-y-4">
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Разове заняття</span><span class="font-display font-bold text-xl md:text-2xl">450 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">8 занять</span><span class="font-display font-bold text-xl md:text-2xl">3200 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">12 занять</span><span class="font-display font-bold text-xl md:text-2xl">4500 ₴</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Бокс</h3>
+          <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Групові (В. Натєсов, О. Солдатенко)</h4>
+          <div class="space-y-4 mb-10">
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Разове заняття</span><span class="font-display font-bold text-xl md:text-2xl">300 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">8 занять</span><span class="font-display font-bold text-xl md:text-2xl">1800 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">12 занять</span><span class="font-display font-bold text-xl md:text-2xl">2200 ₴</span></div>
+            <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-white font-bold text-sm uppercase tracking-wider">Безліміт (В. Натєсов)</span><span class="font-display font-bold text-xl md:text-2xl text-brand-red">3000 ₴</span></div>
+          </div>
+
+          <div class="bg-white/5 p-6 border border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between backdrop-blur-sm relative">
+            <div class="mb-2 md:mb-0">
+              <span class="block font-display font-bold uppercase tracking-wide mb-1 text-xl md:text-2xl">Настільний теніс</span>
+              <span class="text-[10px] sm:text-xs text-brand-muted font-bold uppercase tracking-widest leading-relaxed">
+                <span class="text-brand-red text-lg">*</span> Для постійних клієнтів клубу <br>вартість становить <span class="text-white">150 ₴</span>
+              </span>
+            </div>
+            <span class="font-display font-bold text-2xl md:text-3xl text-brand-red">200 ₴ / год</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer id="contacts" class="pt-20 pb-16 border-t border-white/5 bg-brand-dark relative overflow-hidden mt-auto">
+  <div class="absolute bottom-[-15%] left-0 w-full text-center pointer-events-none select-none overflow-hidden flex justify-center z-0">
+    <h2 class="font-display font-bold text-[24vw] uppercase tracking-tighter leading-none m-0 text-white/[0.03]">ORGANIZM</h2>
+  </div>
+  <div class="max-w-[85rem] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center reveal">
+      <div class="w-full aspect-video md:aspect-[4/3] lg:aspect-[4/3] border border-white/10 rounded-sm overflow-hidden shadow-2xl relative">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.9061614947474!2d36.2162601!3d50.0318536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a12b00000000%3A0x0000000000000000!2z0YPQuy4gMjMg0JDQstCz0YPRgdGC0LAsIDQzLCDQpdCw0YDRjNC60L7Qsiwg0KXQsNGA0YzQutC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNjEwMDA!5e0!3m2!1sru!2sua!4v1700000000000!5m2!1suk!2sua" width="100%" height="100%" style="border:0; filter: invert(100%) grayscale(100%) contrast(1.2) brightness(0.9);" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="flex flex-col space-y-10 text-left">
+        <div>
+          <span class="text-brand-red text-[11px] font-bold tracking-widest-xl uppercase mb-3 block">Локація</span>
+          <p class="font-display font-bold text-3xl md:text-5xl uppercase tracking-wide leading-tight">М. Харків<br>вул. 23 Серпня, 43</p>
+        </div>
+        <div>
+          <span class="text-brand-red text-[11px] font-bold tracking-widest-xl uppercase mb-3 block">Зв'язок</span>
+          <div class="flex flex-col gap-1">
+            <a href="tel:+380959171212" class="font-display font-bold text-3xl md:text-5xl tracking-wide hover:text-brand-red transition-colors">095 917 1212</a>
+            <a href="tel:+380679172112" class="font-display font-bold text-3xl md:text-5xl tracking-wide text-brand-muted hover:text-brand-red transition-colors">067 917 2112</a>
+          </div>
+        </div>
+        <div>
+          <a href="https://instagram.com/sportclub_organizm" target="_blank" class="inline-flex items-center gap-3 font-display font-bold text-xl md:text-2xl uppercase tracking-wide hover:text-brand-red transition-colors text-brand-muted">
+            <i data-lucide="instagram" class="w-6 h-6 md:w-8 md:h-8 text-brand-red"></i> @sportclub_organizm
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  const menuBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = menuBtn.querySelector('.menu-icon');
+  const closeIcon = menuBtn.querySelector('.close-icon');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+    setTimeout(() => mobileMenu.classList.toggle('opacity-0'), 10);
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+    document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
+  });
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>
