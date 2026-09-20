@@ -1,37 +1,24 @@
 <!DOCTYPE html>
-<html lang="uk" class="scroll-smooth">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Спортклуб ORGANIZM | Premium Space</title>
+  <title>Спортклуб ORGANIZM | Premium Fitness Space</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: { extend: { colors: { brand: { red: '#E31818', dark: '#050505', gray: '#121212', muted: '#8A8A8A' } }, fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Oswald', 'sans-serif'] }, letterSpacing: { 'widest-xl': '0.2em' } } }
-    }
-  </script>
+  <script src="js/config.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    body { background-color: #050505; color: #FFFFFF; background-image: radial-gradient(circle at 50% 0%, rgba(227, 24, 24, 0.08) 0%, transparent 60%), url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"); background-size: 100% 100%, 150px 150px; background-attachment: fixed; }
-    ::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-track { background: #050505; } ::-webkit-scrollbar-thumb { background: #333; } ::-webkit-scrollbar-thumb:hover { background: #E31818; }
-    .glass-nav { background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .animate-ticker { display: flex; flex-shrink: 0; width: max-content; animation: ticker 24s linear infinite; will-change: transform; }
-    .trainer-info.is-open { opacity: 1; visibility: visible; }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="antialiased selection:bg-brand-red selection:text-white font-sans font-medium flex flex-col min-h-screen">
+<body class="antialiased font-sans font-medium flex flex-col min-h-screen">
 
 <header class="fixed w-full top-0 z-50 transition-all duration-500" id="navbar">
   <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
     <div class="flex items-center justify-between h-20 md:h-24">
-      <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity z-50 relative">
-        <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
-          <img src="Дизайн без названия.png" alt="Organizm Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-10 h-10 bg-brand-red flex items-center justify-center text-white font-bold font-display text-xl rounded-full\'>O</div>';" class="w-full h-full object-contain drop-shadow-md">
-        </div>
-        <span class="text-xl md:text-2xl font-display font-bold tracking-widest uppercase">Organizm</span>
+      <a href="index.html" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity z-50 relative">
+        <img src="img/logo.svg" alt="ORGANIZM" class="w-9 h-9 md:w-11 md:h-11 object-contain drop-shadow-md shrink-0">
+        <span class="text-xl md:text-2xl font-display font-bold tracking-[0.14em] uppercase leading-none">Organizm</span>
       </a>
       <nav class="hidden lg:flex gap-12 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-muted">
         <a href="index.html" class="text-white transition-colors">Головна</a>
@@ -68,14 +55,13 @@
     </a>
   </div>
 </div>
-
 <main class="flex-grow">
   <section class="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-brand-red rounded-full blur-[150px] md:blur-[200px] opacity-10 pointer-events-none"></div>
     <div class="relative z-10 w-full px-4 sm:px-6 md:px-12 max-w-[100rem] mx-auto mt-8 md:mt-0">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
         <div class="hero-image-wrapper relative w-full aspect-square sm:aspect-[4/3] lg:aspect-square overflow-hidden border border-white/5 order-1 lg:order-2 group mt-8 lg:mt-0 bg-brand-gray">
-          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" alt="Training Space" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" alt="Тренувальний простір" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-transparent to-brand-dark/20 pointer-events-none"></div>
         </div>
         <div class="hero-content flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
@@ -90,10 +76,22 @@
     </div>
   </section>
 
-  <div class="w-full bg-brand-red text-white py-3 border-y border-brand-red/50 ticker-wrapper flex overflow-hidden relative z-20">
-    <div class="animate-ticker text-[10px] sm:text-xs font-bold uppercase tracking-widest-xl whitespace-nowrap">
-      <span class="mx-4 sm:mx-8">Спортклуб Organizm</span> • <span class="mx-4 sm:mx-8">Premium Fitness Space</span> • <span class="mx-4 sm:mx-8">Функціональний тренінг</span> • <span class="mx-4 sm:mx-8">Професійний бокс</span> • <span class="mx-4 sm:mx-8">Пілатес та йога</span> •
-      <span class="mx-4 sm:mx-8">Спортклуб Organizm</span> • <span class="mx-4 sm:mx-8">Premium Fitness Space</span> • <span class="mx-4 sm:mx-8">Функціональний тренінг</span> • <span class="mx-4 sm:mx-8">Професійний бокс</span> • <span class="mx-4 sm:mx-8">Пілатес та йога</span> •
+  <div class="w-full bg-brand-red text-white py-3 border-y border-brand-red/50 flex overflow-hidden relative z-20">
+    <div class="animate-ticker text-[10px] sm:text-xs font-bold uppercase tracking-widest-xl">
+      <div class="ticker-track">
+        <span class="px-4 sm:px-8">Спортклуб Organizm</span><span class="text-white/50">•</span>
+        <span class="px-4 sm:px-8">Premium Fitness Space</span><span class="text-white/50">•</span>
+        <span class="px-4 sm:px-8">Функціональний тренінг</span><span class="text-white/50">•</span>
+        <span class="px-4 sm:px-8">Професійний бокс</span><span class="text-white/50">•</span>
+        <span class="px-4 sm:px-8">Пілатес та йога</span><span class="text-white/50">•</span>
+      </div>
+      <div class="ticker-track">
+        <span class="px-4 sm:px-8">Спортклуб Organizm</span><span class="text-white/50">•</span>
+        <span class="px-4 sm:px-8">Premium Fitness Space</span><span class="text-white/50">•</span>
+        <span class="px-4 sm:px-8">Функціональний тренінг</span><span class="text-white/50">•</span>
+        <span class="px-4 sm:px-8">Професійний бокс</span><span class="text-white/50">•</span>
+        <span class="px-4 sm:px-8">Пілатес та йога</span><span class="text-white/50">•</span>
+      </div>
     </div>
   </div>
 
@@ -121,7 +119,6 @@
       </div>
     </div>
   </section>
-
   <section id="schedule" class="py-20 md:py-32 border-t border-white/5 bg-brand-dark">
     <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 reveal">
@@ -129,70 +126,71 @@
           <span class="text-brand-red text-[10px] font-bold tracking-widest-xl uppercase mb-4 block">Твій час</span>
           <h2 class="font-display font-bold text-4xl md:text-6xl uppercase tracking-wide">Розклад занять</h2>
         </div>
-        <p class="text-brand-muted text-sm max-w-sm mt-4 md:mt-0 font-medium leading-relaxed">
-          Детальний розклад на тиждень. Слідкуйте за оновленнями та скасуваннями в нашому
-          <a href="https://instagram.com/sportclub_organizm" target="_blank" class="text-white hover:text-brand-red underline underline-offset-4 transition-colors">Instagram</a>.
-        </p>
+        <div class="text-brand-muted text-sm max-w-sm mt-4 md:mt-0 font-medium leading-relaxed">
+          <p>Запис — у <a href="https://instagram.com/sportclub_organizm" target="_blank" class="text-white hover:text-brand-red underline underline-offset-4 transition-colors">Direct Instagram</a> (Пн–Пт 9:00–21:00).</p>
+          <p class="mt-2 text-xs opacity-80">Будьте уважні, розклад може змінюватись.</p>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 gsap-stagger">
-        <div class="bg-brand-gray/50 border border-white/5 p-6 md:p-8 rounded-sm">
-          <h3 class="font-display font-bold text-2xl text-brand-red mb-6 border-b border-white/10 pb-4">Понеділок / Середа / П'ятниця</h3>
-          <ul class="space-y-4">
-            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
-              <div>
-                <span class="block font-bold uppercase text-lg">Бокс (Група)</span>
-                <span class="text-xs text-brand-muted">В. Натєсов / О. Солдатенко</span>
-              </div>
-              <span class="font-display font-bold text-xl text-white">18:00</span>
-            </li>
-            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
-              <div>
-                <span class="block font-bold uppercase text-lg">GT MIX</span>
-                <span class="text-xs text-brand-muted">К. Зарицька</span>
-              </div>
-              <span class="font-display font-bold text-xl text-white">19:00</span>
-            </li>
-            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
-              <div>
-                <span class="block font-bold uppercase text-lg">Дитячий Кросфіт</span>
-                <span class="text-xs text-brand-muted">Тренер</span>
-              </div>
-              <span class="font-display font-bold text-xl text-white">16:00</span>
-            </li>
-          </ul>
+
+        <div class="bg-brand-gray/50 border border-white/5 rounded-sm overflow-hidden flex flex-col">
+          <div class="px-6 py-4 border-b border-white/10 bg-white/[0.02] flex items-center justify-between">
+            <h3 class="font-display font-bold text-xl uppercase tracking-wide">Пн · Ср · Пт</h3>
+            <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+          </div>
+          <div class="p-6 space-y-3 flex-1">
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Fly mix</p><p class="text-xs text-brand-muted mt-0.5">Поліна Фесенко</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">09:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Functional</p><p class="text-xs text-brand-muted mt-0.5">Катерина Зарицька</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">09:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Mobility flow</p><p class="text-xs text-brand-muted mt-0.5">Катерина Зарицька</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">10:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Бокс</p><p class="text-xs text-brand-muted mt-0.5">Віталій Натєсов</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">10:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Stretching <span class="text-[9px] font-semibold uppercase tracking-wide text-brand-muted/70">· попередній запис</span></p><p class="text-xs text-brand-muted mt-0.5">Любов Пилипенко</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">13:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Taekwondo Kids</p><p class="text-xs text-brand-muted mt-0.5">Евеліна Гордіонок</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">15:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Taekwondo</p><p class="text-xs text-brand-muted mt-0.5">Евеліна Гордіонок</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">16:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Дитячий кросфіт</p><p class="text-xs text-brand-muted mt-0.5">Анастасія Солодовник</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">16:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Кікбоксинг</p><p class="text-xs text-brand-muted mt-0.5">Олександр Солдатенко</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">16:30</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Stretching + Pilates</p><p class="text-xs text-brand-muted mt-0.5">Марія Швець</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">17:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Kangoo Jumps</p><p class="text-xs text-brand-muted mt-0.5">Артьомова Яна</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">17:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">TRX</p><p class="text-xs text-brand-muted mt-0.5">Денис Бухало</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">18:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Бокс</p><p class="text-xs text-brand-muted mt-0.5">Олександр Солдатенко</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">18:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Recovery</p><p class="text-xs text-brand-muted mt-0.5">Любов Пилипенко</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">18:00</span></div>
+            <div class="flex items-start justify-between gap-3"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Степ-аеробіка</p><p class="text-xs text-brand-muted mt-0.5">Катерина Зарицька</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">19:00</span></div>
+          </div>
         </div>
 
-        <div class="bg-brand-gray/50 border border-white/5 p-6 md:p-8 rounded-sm">
-          <h3 class="font-display font-bold text-2xl text-brand-red mb-6 border-b border-white/10 pb-4">Вівторок / Четвер / Субота</h3>
-          <ul class="space-y-4">
-            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
-              <div>
-                <span class="block font-bold uppercase text-lg">Kangoo Jumps</span>
-                <span class="text-xs text-brand-muted">Тренер</span>
-              </div>
-              <span class="font-display font-bold text-xl text-white">10:00</span>
-            </li>
-            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
-              <div>
-                <span class="block font-bold uppercase text-lg">Taekwondo (Діти)</span>
-                <span class="text-xs text-brand-muted">Е. Гордіонок</span>
-              </div>
-              <span class="font-display font-bold text-xl text-white">16:30</span>
-            </li>
-            <li class="flex justify-between items-center border-b border-white/5 pb-3 hover:bg-white/5 p-2 transition-colors rounded">
-              <div>
-                <span class="block font-bold uppercase text-lg">Pilates / Stretching</span>
-                <span class="text-xs text-brand-muted">Тренер</span>
-              </div>
-              <span class="font-display font-bold text-xl text-white">18:30</span>
-            </li>
-          </ul>
+        <div class="flex flex-col gap-6 md:gap-8">
+          <div class="bg-brand-gray/50 border border-white/5 rounded-sm overflow-hidden flex flex-col">
+            <div class="px-6 py-4 border-b border-white/10 bg-white/[0.02] flex items-center justify-between">
+              <h3 class="font-display font-bold text-xl uppercase tracking-wide">Вт · Чт</h3>
+              <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+            </div>
+            <div class="p-6 space-y-3 flex-1">
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Саржин Яр <span class="text-[9px] font-semibold uppercase tracking-wide text-brand-muted/70">· попередній запис</span></p><p class="text-xs text-brand-muted mt-0.5">Катерина Зарицька</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">07:30</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Бокс</p><p class="text-xs text-brand-muted mt-0.5">Олександр Солдатенко</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">10:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Бокс</p><p class="text-xs text-brand-muted mt-0.5">Віталій Натєсов</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">18:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Functional + Power Fit</p><p class="text-xs text-brand-muted mt-0.5">Артьомова Яна</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">18:00</span></div>
+            <div class="flex items-start justify-between gap-3"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Хатка Йога</p><p class="text-xs text-brand-muted mt-0.5">Софія Фіщук</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">19:00</span></div>
+          </div>
         </div>
+        <div class="bg-brand-gray/50 border border-white/5 rounded-sm overflow-hidden flex flex-col">
+          <div class="px-6 py-4 border-b border-white/10 bg-white/[0.02] flex items-center justify-between">
+            <h3 class="font-display font-bold text-xl uppercase tracking-wide">Субота</h3>
+            <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+          </div>
+          <div class="p-6 space-y-3 flex-1">
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Саржин Яр <span class="text-[9px] font-semibold uppercase tracking-wide text-brand-muted/70">· попередній запис</span></p><p class="text-xs text-brand-muted mt-0.5">Катерина Зарицька</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">08:30</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Бокс</p><p class="text-xs text-brand-muted mt-0.5">Віталій Натєсов</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">10:00</span></div>
+            <div class="flex items-start justify-between gap-3 border-b border-white/5 pb-2.5"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Functional + Power Fit</p><p class="text-xs text-brand-muted mt-0.5">Артьомова Яна</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">10:00</span></div>
+            <div class="flex items-start justify-between gap-3"><div class="min-w-0"><p class="font-bold uppercase text-sm leading-tight">Хатка Йога</p><p class="text-xs text-brand-muted mt-0.5">Софія Фіщук</p></div><span class="font-display font-bold text-lg text-brand-red shrink-0">11:00</span></div>
+          </div>
+        </div>
+        </div>
+
       </div>
+
+      <p class="text-brand-muted text-sm mt-6 reveal">Неділя — вихідний.</p>
     </div>
   </section>
-
   <section id="trainers" class="py-20 md:py-32 border-y border-white/5 relative bg-brand-dark/50">
     <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 reveal">
@@ -201,83 +199,254 @@
           <h2 class="font-display font-bold text-5xl md:text-8xl uppercase tracking-wide">Команда</h2>
         </div>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 gsap-stagger">
-        <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
-          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=800&q=80" alt="Віталій Натєсов" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
-            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Віталій<br>Натєсов</h4>
-            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Бокс / Персональний</p>
-          </div>
-          <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
-            <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Віталій Натєсов</h4>
-            <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 12 років</span>
-            <p class="text-brand-muted text-sm leading-relaxed">Майстер спорту з боксу. Підготував понад 30 призерів обласних турнірів, працює як з новачками, так і зі спортсменами рівня збірної.</p>
-          </div>
+
+      <div class="mb-16 md:mb-20">
+        <div class="flex items-center gap-4 mb-8 reveal">
+          <span class="font-display font-bold text-brand-red text-3xl leading-none">01</span>
+          <h3 class="font-display font-bold text-2xl md:text-3xl uppercase tracking-wide">Бокс</h3>
+          <span class="h-px flex-1 bg-white/10"></span>
         </div>
-        <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
-          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="Олександр Солдатенко" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
-            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Олександр<br>Солдатенко</h4>
-            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Бокс / Зал</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 gsap-stagger">
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=800&q=80" alt="Віталій Натєсов" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Віталій<br>Натєсов</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Бокс</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Віталій Натєсов</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 12 років</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Майстер спорту з боксу. Підготував понад 30 призерів обласних турнірів, працює як з новачками, так і зі спортсменами рівня збірної.</p>
+            </div>
           </div>
-          <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
-            <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Олександр Солдатенко</h4>
-            <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 8 років</span>
-            <p class="text-brand-muted text-sm leading-relaxed">Тренер боксу для початківців та ОФП. Робить акцент на техніці та витривалості, веде групові та персональні заняття.</p>
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="Олександр Солдатенко" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Олександр<br>Солдатенко</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Бокс · Кікбоксинг</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Олександр Солдатенко</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 8 років</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Тренер з боксу та кікбоксингу. Ставить ударну техніку та захист, працює з новачками й досвідченими спортсменами.</p>
+            </div>
           </div>
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80" alt="Станіслав Домінчак" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Станіслав<br>Домінчак</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Бокс</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Станіслав Домінчак</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 6 років</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Тренер з боксу. Ставить ударну техніку та захисні навички, готує до змагань і працює над фізичною формою бійця.</p>
+            </div>
+          </div>
+
         </div>
-        <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
-          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80" alt="Станіслав Домінчак" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
-            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Станіслав<br>Домінчак</h4>
-            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Персональний тренер</p>
-          </div>
-          <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
-            <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Станіслав Домінчак</h4>
-            <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 6 років</span>
-            <p class="text-brand-muted text-sm leading-relaxed">Сертифікований фахівець з функціонального тренінгу та корекції постави. Складає індивідуальні програми під ціль клієнта.</p>
-          </div>
+      </div>
+      <div class="mb-16 md:mb-20">
+        <div class="flex items-center gap-4 mb-8 reveal">
+          <span class="font-display font-bold text-brand-red text-3xl leading-none">02</span>
+          <h3 class="font-display font-bold text-2xl md:text-3xl uppercase tracking-wide">Групові напрямки</h3>
+          <span class="h-px flex-1 bg-white/10"></span>
         </div>
-        <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
-          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Катерина Зарицька" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
-            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Катерина<br>Зарицька</h4>
-            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">GT MIX</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 gsap-stagger">
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Катерина Зарицька" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Катерина<br>Зарицька</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Functional · Mobility flow · Степ-аеробіка</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Катерина Зарицька</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 5 років</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Авторка напрямків GT MIX та авторського функціоналу. Веде Functional, Mobility flow, степ-аеробіку та Саржин Яр.</p>
+            </div>
           </div>
-          <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
-            <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Катерина Зарицька</h4>
-            <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 5 років</span>
-            <p class="text-brand-muted text-sm leading-relaxed">Авторка напрямку GT MIX, спеціалістка з інтервального та групового тренінгу. Тренування завжди тримають високий темп та драйв.</p>
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80" alt="Евеліна Гордіонок" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Евеліна<br>Гордіонок</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Taekwondo Kids · Taekwondo</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Евеліна Гордіонок</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 9 років</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Майстер спорту з тхеквондо, тренує дитячі та дорослі групи. Приділяє увагу дисципліні, розтяжці та безпечній техніці.</p>
+            </div>
           </div>
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=800&q=80" alt="Поліна Фесенко" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <span class="absolute top-4 left-4 z-20 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Фото скоро</span>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Поліна<br>Фесенко</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Fly mix</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Поліна Фесенко</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Інформація скоро</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Фото та детальна інформація про тренерку з'являться незабаром. Слідкуйте за оновленнями в Instagram.</p>
+            </div>
+          </div>
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Любов Пилипенко" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <span class="absolute top-4 left-4 z-20 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Фото скоро</span>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Любов<br>Пилипенко</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Stretching · Recovery</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Любов Пилипенко</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Інформація скоро</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Фото та детальна інформація про тренерку з'являться незабаром. Слідкуйте за оновленнями в Instagram.</p>
+            </div>
+          </div>
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Анастасія Солодовник" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <span class="absolute top-4 left-4 z-20 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Фото скоро</span>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Анастасія<br>Солодовник</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Дитячий кросфіт</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Анастасія Солодовник</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Інформація скоро</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Фото та детальна інформація про тренерку з'являться незабаром. Слідкуйте за оновленнями в Instagram.</p>
+            </div>
+          </div>
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=800&q=80" alt="Марія Швець" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <span class="absolute top-4 left-4 z-20 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Фото скоро</span>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Марія<br>Швець</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Stretching + Pilates</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Марія Швець</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Інформація скоро</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Фото та детальна інформація про тренерку з'являться незабаром. Слідкуйте за оновленнями в Instagram.</p>
+            </div>
+          </div>
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80" alt="Артьомова Яна" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <span class="absolute top-4 left-4 z-20 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Фото скоро</span>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Артьомова<br>Яна</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Kangoo Jumps · Functional + Power Fit</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Артьомова Яна</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Інформація скоро</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Фото та детальна інформація про тренерку з'являться незабаром. Слідкуйте за оновленнями в Instagram.</p>
+            </div>
+          </div>
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80" alt="Денис Бухало" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <span class="absolute top-4 left-4 z-20 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Фото скоро</span>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Денис<br>Бухало</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">TRX</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Денис Бухало</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Інформація скоро</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Фото та детальна інформація про тренера з'являться незабаром. Слідкуйте за оновленнями в Instagram.</p>
+            </div>
+          </div>
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Софія Фіщук" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <span class="absolute top-4 left-4 z-20 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Фото скоро</span>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Софія<br>Фіщук</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Хатка Йога</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Софія Фіщук</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Інформація скоро</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Фото та детальна інформація про тренерку з'являться незабаром. Слідкуйте за оновленнями в Instagram.</p>
+            </div>
+          </div>
+
         </div>
-        <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
-          <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=800&q=80" alt="Микита Чепелєв" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
-            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Микита<br>Чепелєв</h4>
-            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Персональний тренер</p>
-          </div>
-          <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
-            <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Микита Чепелєв</h4>
-            <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 7 років</span>
-            <p class="text-brand-muted text-sm leading-relaxed">Персональний тренінг та підготовка до змагань з пауерліфтингу. Працює над силовими показниками та технікою базових вправ.</p>
-          </div>
+      </div>
+      <div>
+        <div class="flex items-center gap-4 mb-8 reveal">
+          <span class="font-display font-bold text-brand-red text-3xl leading-none">03</span>
+          <h3 class="font-display font-bold text-2xl md:text-3xl uppercase tracking-wide">Персональні тренери</h3>
+          <span class="h-px flex-1 bg-white/10"></span>
         </div>
-        <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
-          <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80" alt="Евеліна Гордіонок" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-          <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
-            <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Евеліна<br>Гордіонок</h4>
-            <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Тхеквондо</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 gsap-stagger">
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=800&q=80" alt="Микита Чепелєв" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Микита<br>Чепелєв</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Персональний тренер</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Микита Чепелєв</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 7 років</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Персональний тренінг та підготовка до змагань з пауерліфтингу. Працює над силовими показниками та технікою базових вправ.</p>
+            </div>
           </div>
-          <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
-            <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Евеліна Гордіонок</h4>
-            <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Стаж — 9 років</span>
-            <p class="text-brand-muted text-sm leading-relaxed">Майстер спорту з тхеквондо, тренує дитячі групи. Приділяє увагу дисципліні, розтяжці та безпечній техніці ударів.</p>
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=800&q=80" alt="Олег" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <span class="absolute top-4 left-4 z-20 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Фото скоро</span>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Олег</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Персональний тренер</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Олег</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Інформація скоро</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Фото та детальна інформація про тренера з'являться незабаром. Слідкуйте за оновленнями в Instagram.</p>
+            </div>
           </div>
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&w=800&q=80" alt="Мілена" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <span class="absolute top-4 left-4 z-20 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Фото скоро</span>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Мілена</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Персональний тренер</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Мілена</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Інформація скоро</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Фото та детальна інформація про тренерку з'являться незабаром. Слідкуйте за оновленнями в Instagram.</p>
+            </div>
+          </div>
+
+          <div class="trainer-card group relative aspect-[3/4] overflow-hidden bg-brand-gray border border-white/5 cursor-pointer" tabindex="0">
+            <span class="absolute top-4 left-4 z-20 bg-brand-red text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1">Новий тренер</span>
+            <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80" alt="Кристина" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full bg-gradient-to-t from-brand-dark to-transparent">
+              <h4 class="font-display font-bold text-3xl uppercase text-white leading-tight">Кристина</h4>
+              <p class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mt-2">Персональний тренер</p>
+            </div>
+            <div class="trainer-info absolute inset-0 bg-brand-dark/90 backdrop-blur-sm opacity-0 invisible transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
+              <h4 class="font-display font-bold text-2xl uppercase text-white leading-tight mb-2">Кристина</h4>
+              <span class="text-brand-red text-[10px] font-bold uppercase tracking-widest-xl mb-3">Новий тренер клубу</span>
+              <p class="text-brand-muted text-sm leading-relaxed">Фото та детальна інформація про тренерку з'являться незабаром. Слідкуйте за оновленнями в Instagram.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
-
   <section class="py-20 md:py-32 border-b border-white/5 bg-brand-dark/30 backdrop-blur-sm">
     <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 gsap-stagger">
@@ -317,7 +486,6 @@
     </div>
   </section>
 </main>
-
 <footer id="contacts" class="pt-20 pb-16 border-t border-white/5 bg-brand-dark relative overflow-hidden mt-auto">
   <div class="absolute bottom-[-15%] left-0 w-full text-center pointer-events-none select-none overflow-hidden flex justify-center z-0">
     <h2 class="font-display font-bold text-[24vw] uppercase tracking-tighter leading-none m-0 text-white/[0.03]">ORGANIZM</h2>
@@ -349,86 +517,29 @@
         </div>
       </div>
     </div>
+
+    <div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-brand-muted text-xs font-medium">© <span data-year>2026</span> Спортклуб ORGANIZM. Всі права захищені.</p>
+      <p class="text-brand-muted text-xs font-medium">Харків, вул. 23 Серпня, 43</p>
+    </div>
   </div>
 </footer>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script>
-  lucide.createIcons();
-
-  // Мобільне меню
-  const menuBtn = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = menuBtn.querySelector('.menu-icon');
-  const closeIcon = menuBtn.querySelector('.close-icon');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
-
-  function toggleMenu() {
-    mobileMenu.classList.toggle('hidden');
-    mobileMenu.classList.toggle('flex');
-    setTimeout(() => mobileMenu.classList.toggle('opacity-0'), 10);
-    menuIcon.classList.toggle('hidden');
-    closeIcon.classList.toggle('hidden');
-    document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
-  }
-
-  menuBtn.addEventListener('click', toggleMenu);
-  mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
-
-  // Хедер скролл (тільки на головній сторінці)
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('glass-nav', window.scrollY > 20);
-  });
-
-  // GSAP Анімації
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Анімація Hero секції
-  gsap.fromTo(".hero-image-wrapper",
-          { scale: 1.05, opacity: 0 },
-          { scale: 1, opacity: 1, duration: 1.5, ease: "power3.out" }
-  );
-  gsap.fromTo(".hero-content > *",
-          { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: "power3.out", delay: 0.3 }
-  );
-
-  // Звичайний reveal для блоків
-  gsap.utils.toArray('.reveal').forEach(elem => {
-    gsap.fromTo(elem,
-            { opacity: 0, y: 40 },
-            { opacity: 1, y: 0, duration: 1, ease: "power3.out", scrollTrigger: { trigger: elem, start: "top 85%" } }
-    );
-  });
-
-  // Каскадна (stagger) анімація для грідів
-  gsap.utils.toArray('.gsap-stagger').forEach(container => {
-    gsap.fromTo(container.children,
-            { opacity: 0, y: 40 },
-            { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power3.out", scrollTrigger: { trigger: container, start: "top 85%" } }
-    );
-  });
-
-  // Логіка карток тренерів
-  document.querySelectorAll('.trainer-card').forEach((card) => {
-    const info = card.querySelector('.trainer-info');
-    card.addEventListener('click', () => {
-      const willOpen = !info.classList.contains('is-open');
-      document.querySelectorAll('.trainer-info.is-open').forEach((el) => el.classList.remove('is-open'));
-      if (willOpen) info.classList.add('is-open');
-    });
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
-    });
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.trainer-card')) {
-      document.querySelectorAll('.trainer-info.is-open').forEach((el) => el.classList.remove('is-open'));
-    }
-  });
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
