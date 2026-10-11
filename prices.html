@@ -63,10 +63,11 @@
             <h1 class="font-display font-bold text-5xl md:text-8xl uppercase tracking-wide">Інвестиції</h1>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 xl:gap-x-24 gap-y-16 gsap-stagger">
+        <!-- Моб.: колонки "розчиняються" (contents), блоки йдуть у порядку order-N. Десктоп (lg+): дві колонки як раніше. -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 xl:gap-x-24 gap-y-16">
 
-            <div class="space-y-16">
-                <div>
+            <div class="contents lg:block lg:space-y-16">
+                <div class="reveal order-1">
                     <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Тренажерний зал</h3>
                     <div class="space-y-4">
                         <div class="flex justify-between items-end pb-3 border-b border-white/5 hover:border-white/20 transition-colors"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Разове відвідування</span><span class="font-display font-bold text-xl md:text-2xl">300 ₴</span></div>
@@ -78,14 +79,14 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="reveal order-2">
                     <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Персональні тренування</h3>
                     <p class="text-xs text-brand-muted mb-6">Абонементи на індивідуальну роботу з тренером у тренажерному залі.</p>
                     <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Індивідуальні (1 на 1)</h4>
                     <div class="space-y-4 mb-8">
                         <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Разове заняття</span><span class="font-display font-bold text-xl md:text-2xl">600 ₴</span></div>
-                        <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">8 занять</span><span class="font-display font-bold text-xl md:text-2xl">3400 ₴</span></div>
-                        <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">12 занять</span><span class="font-display font-bold text-xl md:text-2xl">4400 ₴</span></div>
+                        <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">8 занять</span><span class="font-display font-bold text-xl md:text-2xl">4400 ₴</span></div>
+                        <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">12 занять</span><span class="font-display font-bold text-xl md:text-2xl">6600 ₴</span></div>
                     </div>
                     <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Персональні з тренером</h4>
                     <div class="space-y-4">
@@ -95,7 +96,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="reveal order-5">
                     <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Kangoo Jumps</h3>
                     <div class="space-y-4">
                         <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Разове заняття</span><span class="font-display font-bold text-xl md:text-2xl">400 ₴</span></div>
@@ -104,7 +105,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="reveal order-7">
                     <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Масаж</h3>
                     <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Абонементи</h4>
                     <div class="space-y-4 mb-8">
@@ -130,8 +131,8 @@
                 </div>
 
             </div>
-            <div class="space-y-16">
-                <div>
+            <div class="contents lg:block lg:space-y-16">
+                <div class="reveal order-4">
                     <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Бокс</h3>
                     <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Групові (В. Натєсов · О. Солдатенко)</h4>
                     <div class="space-y-4 mb-8">
@@ -156,26 +157,46 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="reveal order-3">
                     <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Групові напрямки</h3>
                     <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">GT MIX — всі напрямки</h4>
-                    <p class="text-xs text-brand-muted mb-4">До GT MIX входять: Fly Yoga, Stretching, Pilates/Stretching, TRX, Recovery, Функціонал Power, Хатха Йога.</p>
                     <div class="space-y-4 mb-8">
                         <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Разове заняття</span><span class="font-display font-bold text-xl md:text-2xl">300 ₴</span></div>
                         <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">8 занять</span><span class="font-display font-bold text-xl md:text-2xl">1600 ₴</span></div>
                         <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">12 занять</span><span class="font-display font-bold text-xl md:text-2xl">2100 ₴</span></div>
-                        <div class="flex justify-between items-end pb-3 border-b border-brand-red/30 hover:border-brand-red transition-colors"><span class="text-white font-bold text-sm uppercase tracking-wider">ГТ + ТЗ</span><span class="font-display font-bold text-xl md:text-2xl text-brand-red">3300 ₴</span></div>
+                        <div class="flex justify-between items-end pb-3 border-b border-brand-red/30 hover:border-brand-red transition-colors"><span class="text-white font-bold text-sm uppercase tracking-wider">ГТ + ТЗ<span class="block text-[10px] normal-case tracking-wide text-brand-muted font-medium mt-0.5">групові тренування + тренажерний зал</span></span><span class="font-display font-bold text-xl md:text-2xl text-brand-red">3300 ₴</span></div>
+                    </div>
+                    <div class="mb-10">
+                        <p class="text-xs text-brand-muted mb-4">До абонемента входять:</p>
+                        <div class="space-y-4">
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">Fly Yoga</p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Пн, Ср, Пт — <span class="text-white font-semibold">09:00</span></p></div>
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">Stretching</p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Пн, Ср, Пт — <span class="text-white font-semibold">13:00</span></p></div>
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">Pilates / Stretching</p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Пн, Ср, Пт — <span class="text-white font-semibold">17:00</span></p></div>
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">TRX</p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Пн, Ср, Пт — <span class="text-white font-semibold">18:00</span></p></div>
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">Recovery</p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Пн, Ср, Пт — <span class="text-white font-semibold">18:00</span></p></div>
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">Функціонал + Power fit</p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Вт, Чт — <span class="text-white font-semibold">09:00</span> і <span class="text-white font-semibold">18:00</span> · Сб — <span class="text-white font-semibold">10:00</span></p></div>
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">Хатха Йога</p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Вт, Чт — <span class="text-white font-semibold">19:00</span> · Сб — <span class="text-white font-semibold">11:00</span></p></div>
+                        </div>
                     </div>
                     <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Авторське (К. Зарицька)</h4>
                     <div class="space-y-4">
                         <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">Разове заняття</span><span class="font-display font-bold text-xl md:text-2xl">300 ₴</span></div>
                         <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">8 занять</span><span class="font-display font-bold text-xl md:text-2xl">1700 ₴</span></div>
                         <div class="flex justify-between items-end pb-3 border-b border-white/5"><span class="text-brand-muted text-sm font-semibold uppercase tracking-wider">12 занять</span><span class="font-display font-bold text-xl md:text-2xl">2200 ₴</span></div>
-                        <div class="flex justify-between items-end pb-3 border-b border-brand-red/30 hover:border-brand-red transition-colors"><span class="text-white font-bold text-sm uppercase tracking-wider">ГТ + ТЗ</span><span class="font-display font-bold text-xl md:text-2xl text-brand-red">3400 ₴</span></div>
+                        <div class="flex justify-between items-end pb-3 border-b border-brand-red/30 hover:border-brand-red transition-colors"><span class="text-white font-bold text-sm uppercase tracking-wider">ГТ + ТЗ<span class="block text-[10px] normal-case tracking-wide text-brand-muted font-medium mt-0.5">групові тренування + тренажерний зал</span></span><span class="font-display font-bold text-xl md:text-2xl text-brand-red">3400 ₴</span></div>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-xs text-brand-muted mb-4">До абонемента входять:</p>
+                        <div class="space-y-4">
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">Функціонал</p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Пн, Ср, Пт — <span class="text-white font-semibold">09:00</span></p></div>
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">Mobility flow</p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Пн, Ср, Пт — <span class="text-white font-semibold">10:00</span></p></div>
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">Степи</p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Пн, Ср, Пт — <span class="text-white font-semibold">19:00</span></p></div>
+                            <div class="pb-3 border-b border-white/5"><p class="text-white text-sm font-bold uppercase tracking-wider">Саржин Яр <span class="text-[9px] font-semibold normal-case tracking-wide text-brand-muted/70">· попередній запис</span></p><p class="text-sm text-brand-muted mt-1 leading-relaxed">Вт, Чт — <span class="text-white font-semibold">07:30</span> · Сб — <span class="text-white font-semibold">08:30</span></p></div>
+                        </div>
                     </div>
                 </div>
 
-                <div>
+                <div class="reveal order-6">
                     <h3 class="font-display font-bold text-3xl md:text-4xl uppercase tracking-wide mb-6 pb-4 border-b border-white/10 text-white">Дитячі напрямки</h3>
                     <h4 class="font-sans text-sm font-bold uppercase tracking-widest text-brand-red mb-4">Taekwondo (Е. Гордіонок)</h4>
                     <div class="space-y-4">
