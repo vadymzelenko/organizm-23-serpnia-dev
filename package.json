@@ -1,0 +1,11 @@
+{
+  "name": "organizm-23-serpnia",
+  "private": true,
+  "scripts": {
+    "css:build": "tailwindcss -i css/input.css -o css/main.css --minify",
+    "css:watch": "tailwindcss -i css/input.css -o css/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

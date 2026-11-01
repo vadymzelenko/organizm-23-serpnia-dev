@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Простір | ORGANIZM</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="js/config.js"></script>
+  <meta name="description" content="Простір спортклубу ORGANIZM у Харкові: тренажерний зал, боксерський ринг, спортивне обладнання, два зали для групових тренувань, роздягальні.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 <body class="antialiased font-sans font-medium flex flex-col min-h-screen">
 
@@ -17,7 +17,7 @@
   <div class="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-12">
     <div class="flex items-center justify-between h-20 md:h-24">
       <a href="index.html" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity z-50 relative">
-        <img src="img/logo.svg" alt="ORGANIZM" class="w-9 h-9 md:w-11 md:h-11 object-contain drop-shadow-md shrink-0">
+        <img src="img/logo-96.webp" alt="ORGANIZM" width="44" height="44" class="w-9 h-9 md:w-11 md:h-11 object-contain drop-shadow-md shrink-0">
         <span class="text-xl md:text-2xl font-display font-bold tracking-[0.14em] uppercase leading-none">Organizm</span>
       </a>
       <nav class="hidden lg:flex gap-12 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-muted">
@@ -34,8 +34,8 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
         </a>
       </div>
-      <button id="menu-toggle" class="lg:hidden text-white p-2 z-50 relative">
-        <i data-lucide="menu" class="w-6 h-6 menu-icon"></i><i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+      <button id="menu-toggle" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden text-white p-2 z-50 relative">
+        <svg class="w-6 h-6 menu-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg><svg class="w-6 h-6 close-icon hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
       </button>
     </div>
   </div>
@@ -60,7 +60,7 @@
 
     <div class="mb-12 md:mb-16 reveal">
       <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-red mb-4">
-        <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 23 Серпня | Харків
+        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg> 23 Серпня | Харків
       </div>
       <h1 class="font-display font-bold text-4xl sm:text-6xl md:text-8xl uppercase tracking-wide">Простір Клубу</h1>
       <p class="text-brand-muted text-sm sm:text-base max-w-2xl mt-4 font-normal leading-relaxed">
@@ -78,8 +78,8 @@
         <span class="text-xs uppercase tracking-widest text-brand-muted font-bold block">Тренажерний зал</span>
       </div>
       <div class="bg-brand-gray/60 border border-white/5 p-6 md:p-8 rounded-sm">
-        <span class="text-brand-red font-display font-bold text-4xl sm:text-5xl md:text-6xl block mb-1">76<span class="text-2xl md:text-3xl text-white"> м²</span></span>
-        <span class="text-xs uppercase tracking-widest text-brand-muted font-bold block">Мала зала програм</span>
+        <span class="text-brand-red font-display font-bold text-4xl sm:text-5xl md:text-6xl block mb-1">2<span class="text-2xl md:text-3xl text-white"> зали</span></span>
+        <span class="text-xs uppercase tracking-widest text-brand-muted font-bold block">Групові тренування</span>
       </div>
       <div class="bg-brand-gray/60 border border-white/5 p-6 md:p-8 rounded-sm">
         <span class="text-brand-red font-display font-bold text-4xl sm:text-5xl md:text-6xl block mb-1">3<span class="text-2xl md:text-3xl text-white"> рівні</span></span>
@@ -93,22 +93,22 @@
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 gsap-stagger">
         <div class="bg-brand-card p-6 border border-white/5 hover:border-brand-red/30 transition-colors">
-          <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+          <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4"><svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></div>
           <h3 class="font-display font-bold text-lg uppercase mb-2">Еко-покриття</h3>
           <p class="text-xs text-brand-muted leading-relaxed">Екологічно чисте спеціалізоване покриття. Підлоги абсолютно без запаху гуми.</p>
         </div>
         <div class="bg-brand-card p-6 border border-white/5 hover:border-brand-red/30 transition-colors">
-          <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4"><i data-lucide="wind" class="w-5 h-5"></i></div>
+          <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4"><svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2" /><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2" /><path d="M9.8 4.4A2 2 0 1 1 11 8H2" /></svg></div>
           <h3 class="font-display font-bold text-lg uppercase mb-2">Клімат 3 рівнів</h3>
           <p class="text-xs text-brand-muted leading-relaxed">Трирівнева система вентиляції та кондиціювання повітря в усіх групових залах.</p>
         </div>
         <div class="bg-brand-card p-6 border border-white/5 hover:border-brand-red/30 transition-colors">
-          <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4"><i data-lucide="volume-2" class="w-5 h-5"></i></div>
+          <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4"><svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" /><path d="M16 9a5 5 0 0 1 0 6" /><path d="M19.364 18.364a9 9 0 0 0 0-12.728" /></svg></div>
           <h3 class="font-display font-bold text-lg uppercase mb-2">Звук Yamaha</h3>
           <p class="text-xs text-brand-muted leading-relaxed">Преміальна звукова система Yamaha для створення правильної атмосфери та темпу.</p>
         </div>
         <div class="bg-brand-card p-6 border border-white/5 hover:border-brand-red/30 transition-colors">
-          <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4"><i data-lucide="key-round" class="w-5 h-5"></i></div>
+          <div class="w-10 h-10 bg-white/5 flex items-center justify-center text-brand-red mb-4"><svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /><circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></svg></div>
           <h3 class="font-display font-bold text-lg uppercase mb-2">Система доступу</h3>
           <p class="text-xs text-brand-muted leading-relaxed">Електронні замки та смарт-шафи для безпечного зберігання особистих речей.</p>
         </div>
@@ -119,109 +119,102 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 gsap-stagger">
         <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group">
-          <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
-            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Тренажерний зал" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <div class="relative aspect-[4/5] overflow-hidden bg-brand-gray">
+            <img src="img/space/gym-800.webp" srcset="img/space/gym-480.webp 480w, img/space/gym-800.webp 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw" width="800" height="1064" alt="Тренажерний зал" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
             <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">500 кв.м</span>
           </div>
           <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
             <div>
               <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Тренажерний зал</h3>
               <ul class="space-y-2 text-xs text-brand-muted">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Професійні силові тренажери</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Зона кардіо з автономним кондиціюванням</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Повна лінійка вільних ваг</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Професійні силові тренажери</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Зона кардіо</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Повна лінійка вільних ваг</li>
               </ul>
             </div>
           </div>
         </div>
 
         <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group">
-          <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
-            <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" alt="Зона боксу" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <div class="relative aspect-[4/5] overflow-hidden bg-brand-gray">
+            <img src="img/space/ring-800.webp" srcset="img/space/ring-480.webp 480w, img/space/ring-800.webp 591w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw" width="591" height="1148" alt="Боксерський ринг" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
             <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Open Space</span>
           </div>
           <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
             <div>
               <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Боксерський ринг</h3>
               <ul class="space-y-2 text-xs text-brand-muted">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Професійний боксерський ринг</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>7 професійних боксерських мішків</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Повний комплект екіпірування</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Професійний боксерський ринг</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>7 професійних боксерських мішків</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Надаємо екіпірування для занять</li>
               </ul>
             </div>
           </div>
         </div>
 
         <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group">
-          <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
-            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Функціональний тренінг" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-            <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Зона TRX</span>
+          <div class="relative aspect-[4/5] overflow-hidden bg-brand-gray">
+            <img src="img/space/equipment-800.webp" srcset="img/space/equipment-480.webp 480w, img/space/equipment-800.webp 591w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw" width="591" height="1138" alt="Спортивне обладнання" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+            <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Functional</span>
           </div>
           <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
             <div>
-              <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Функціональна зона</h3>
+              <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Спортивне обладнання</h3>
               <p class="text-xs text-brand-muted mb-3 font-semibold text-white/90">Шведські стінки та спеціалізований інвентар:</p>
               <div class="flex flex-wrap gap-1.5 text-[10px] text-brand-muted uppercase font-bold">
-                <span class="bg-white/5 px-2 py-1 border border-white/5">Гірі</span>
+                <span class="bg-white/5 px-2 py-1 border border-white/5">Гирі</span>
                 <span class="bg-white/5 px-2 py-1 border border-white/5">BOSU</span>
                 <span class="bg-white/5 px-2 py-1 border border-white/5">Боді-бари</span>
                 <span class="bg-white/5 px-2 py-1 border border-white/5">Петлі TRX</span>
                 <span class="bg-white/5 px-2 py-1 border border-white/5">Гантелі</span>
                 <span class="bg-white/5 px-2 py-1 border border-white/5">Резинки</span>
+                <span class="bg-white/5 px-2 py-1 border border-white/5">М'ячі</span>
+                <span class="bg-white/5 px-2 py-1 border border-white/5">Роли</span>
+                <span class="bg-white/5 px-2 py-1 border border-white/5">Манжети</span>
+                <span class="bg-white/5 px-2 py-1 border border-white/5">Пояси</span>
+                <span class="bg-white/5 px-2 py-1 border border-white/5">Лямки</span>
+                <span class="bg-white/5 px-2 py-1 border border-white/5">Балансуючі подушки</span>
+                <span class="bg-white/5 px-2 py-1 border border-white/5">Блоки</span>
+                <span class="bg-white/5 px-2 py-1 border border-white/5">Степи</span>
+                <span class="bg-white/5 px-2 py-1 border border-white/5">Канат</span>
               </div>
             </div>
           </div>
         </div>
         <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group">
-          <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
-            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Мала зала групових занять" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-            <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">76 кв.м</span>
+          <div class="relative aspect-[4/5] overflow-hidden bg-brand-gray">
+            <img src="img/space/group-halls-800.webp" srcset="img/space/group-halls-480.webp 480w, img/space/group-halls-800.webp 590w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw" width="590" height="1140" alt="Зала групових тренувань" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+            <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">2 зали</span>
           </div>
           <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
             <div>
-              <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Мала зала програм</h3>
+              <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Два зали для групових тренувань</h3>
               <ul class="space-y-2 text-xs text-brand-muted">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Студія для йоги, пілатесу та танців</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Аудіосистема Yamaha</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Дерев'яне екологічне покриття</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Аудіосистема</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Дерев'яне екологічне покриття</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Дзеркала для контролю техніки виконання вправ та правильності рухів</li>
               </ul>
             </div>
           </div>
         </div>
 
         <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group">
-          <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
-            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="Роздягальня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <div class="relative aspect-[4/5] overflow-hidden bg-brand-gray">
+            <img src="img/space/lockers-800.webp" srcset="img/space/lockers-480.webp 480w, img/space/lockers-800.webp 568w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw" width="568" height="708" alt="Роздягальня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
             <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Smart Locker</span>
           </div>
           <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
             <div>
               <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Роздягальні</h3>
               <ul class="space-y-2 text-xs text-brand-muted">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Шафи з електронним замком</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Просторі вентильовані зони</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Фени та комфортна зона відпочинку</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Шафи з електронним замком</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Фени та засоби особистої гігієни</li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 mt-px shrink-0 text-brand-red" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Обладнані душові кімнати та санвузли</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div class="bg-brand-card border border-white/5 overflow-hidden flex flex-col group">
-          <div class="relative aspect-[4/3] overflow-hidden bg-brand-gray">
-            <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" alt="Душові" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-            <span class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1 text-brand-red border border-white/10">Recovery</span>
-          </div>
-          <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
-            <div>
-              <h3 class="font-display font-bold text-2xl uppercase mb-3 text-white">Душові & Санвузли</h3>
-              <ul class="space-y-2 text-xs text-brand-muted">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Сучасні душові з потужним напором</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Ідеальна чистота та дезінфекція</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-red"></i>Якісна сантехніка преміум-класу</li>
-              </ul>
-            </div>
-          </div>
-        </div>
 
       </div>
     </div>
@@ -236,7 +229,7 @@
   <div class="max-w-[85rem] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center reveal">
       <div class="w-full aspect-video md:aspect-[4/3] lg:aspect-[4/3] border border-white/10 rounded-sm overflow-hidden shadow-2xl relative">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.9061614947474!2d36.2162601!3d50.0318536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a12b00000000%3A0x0000000000000000!2z0YPQuy4gMjMg0JDQstCz0YPRgdGC0LAsIDQzLCDQpdCw0YDRjNC60L7Qsiwg0KXQsNGA0YzQutC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNjEwMDA!5e0!3m2!1sru!2sua!4v1700000000000!5m2!1suk!2sua" width="100%" height="100%" style="border:0; filter: invert(100%) grayscale(100%) contrast(1.2) brightness(0.9);" allowfullscreen="" loading="lazy"></iframe>
+        <iframe title="Карта: Харків, вул. 23 Серпня, 43" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.9061614947474!2d36.2162601!3d50.0318536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a12b00000000%3A0x0000000000000000!2z0YPQuy4gMjMg0JDQstCz0YPRgdGC0LAsIDQzLCDQpdCw0YDRjNC60L7Qsiwg0KXQsNGA0YzQutC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNjEwMDA!5e0!3m2!1sru!2sua!4v1700000000000!5m2!1suk!2sua" width="100%" height="100%" style="border:0; filter: invert(100%) grayscale(100%) contrast(1.2) brightness(0.9);" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
       <div class="flex flex-col space-y-10 text-left">
@@ -252,7 +245,7 @@
           </div>
         </div>
         <div>
-          <a href="https://instagram.com/sportclub_organizm" target="_blank" class="inline-flex items-center gap-3 font-display font-bold text-xl md:text-2xl uppercase tracking-wide hover:text-brand-red transition-colors text-brand-muted">
+          <a href="https://instagram.com/sportclub_organizm" target="_blank" rel="noopener" class="inline-flex items-center gap-3 font-display font-bold text-xl md:text-2xl uppercase tracking-wide hover:text-brand-red transition-colors text-brand-muted">
             <svg class="w-6 h-6 md:w-8 md:h-8 text-brand-red" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
             @sportclub_organizm
           </a>
@@ -267,14 +260,8 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/lucide@latest"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
-
-
-
-
-
