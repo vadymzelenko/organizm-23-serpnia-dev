@@ -1,26 +1,31 @@
-# ORGANIZM — Fitness Club Website
+# organizm-23-serpnia-dev
 
-Multi-page website for the ORGANIZM sports club: training directions, class schedule, coaches, opening hours, club rules, membership prices and a gallery of the space. Dark design with large display typography and scroll animations.
+Статичний сайт спортклубу ORGANIZM (Харків, вул. 23 Серпня, 43).
 
-## Pages
+## Сторінки
 
-| File | Content |
-|---|---|
-| `index.html` | Main page: hero, training directions, class schedule, team, opening hours, club rules |
-| `prices.html` | Membership prices |
-| `price_v2.html` | Alternative layout of the price page |
-| `gallery.html` | Zones and equipment of the club |
+- `index.html` — головна (розклад, команда, режим роботи)
+- `gallery.html` — простір клубу
+- `prices.html` — абонементи (розкривні блоки)
 
-## Stack
+## Стилі
 
-Static HTML, Tailwind CSS (CDN, theme in `js/config.js`), GSAP with ScrollTrigger, Lucide icons. No build step.
+Tailwind збирається в статичний `css/main.css` (CDN більше не використовується).
+Після зміни класів у HTML або `css/style.css` перезберіть CSS:
 
 ```bash
-npx serve .
+npm install
+npm run css:build   # або npm run css:watch під час роботи
 ```
 
-Brand colours and fonts are configured in `js/config.js`, custom styles in `css/style.css`, interactions in `js/main.js`.
+`css/main.css` комітиться разом з HTML — на хостингу (Vercel) збірка не потрібна і не запускається.
 
-A copy of this site is part of the [template store](https://github.com/vadymzelenko/templates_store) (`public/projects/organizm`).
+## Зображення
 
-© Vadym Zelenko. Client project; texts, logo and contact details belong to the club.
+- `img/hero`, `img/trainers`, `img/space` — WebP у двох розмірах (`-480` і `-800`).
+- Іконки Lucide вбудовані в HTML як inline SVG.
+
+## Порівняння фото К. Зарицької
+
+`index.html` — перший варіант, `index.html?photo=2` — другий
+(атрибути `data-alt-*` на картці, підміна в `js/main.js`).

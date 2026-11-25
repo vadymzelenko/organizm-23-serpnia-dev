@@ -3,9 +3,13 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Іконки Lucide
-  if (window.lucide) {
-    lucide.createIcons();
+  // Варіант фото для порівняння (?photo=2): підміняє src на data-alt-src
+  if (new URLSearchParams(location.search).get('photo') === '2') {
+    document.querySelectorAll('img[data-alt-src]').forEach((img) => {
+      img.srcset = img.dataset.altSrcset || '';
+      img.src = img.dataset.altSrc;
+      if (img.dataset.altPosition) img.style.objectPosition = img.dataset.altPosition;
+    });
   }
 
   // Мобільне меню
@@ -24,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (menuIcon) menuIcon.classList.toggle('hidden');
       if (closeIcon) closeIcon.classList.toggle('hidden');
       document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
+      menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
     };
 
     menuBtn.addEventListener('click', toggleMenu);
