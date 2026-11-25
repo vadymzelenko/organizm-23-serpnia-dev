@@ -1,8 +1,9 @@
 /* ============================================================
-   ORGANIZM — конфігурація Tailwind (CDN)
+   ORGANIZM — конфігурація Tailwind (збірка: npm run build)
    ============================================================ */
 
-tailwind.config = {
+module.exports = {
+  content: ['./*.html', './js/**/*.js'],
   theme: {
     extend: {
       colors: {
